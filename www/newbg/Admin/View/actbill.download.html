@@ -1,0 +1,28 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="{$_public}swfupload/default.css" rel="stylesheet" type="text/css" />
+ 
+ 
+	
+<form action="{eval echo U('fujian/save')}" enctype="multipart/form-data" method="POST">
+	 上传<input type=file name='Filedata'>
+	 说明<input type=text name='title'>
+	 <input type=hidden name='bid' value={$bid}>
+	 <input type=submit>
+</form>	
+
+<table  border=1>
+{loop $rs $k $v}
+<tr >
+<td style="background:#F3F4F5; padding:15px;"><a href="/{$v['file_path']}">下载</a></td>
+<td style="background:#F3F4f1; padding:15px;">{$v['file_name']}</td>
+<td style="background:#F3F4F2; padding:15px;">{$v['remark']}</td>
+ </tr>
+{/loop}
+</ul>
+ 
+</body>
+</html>

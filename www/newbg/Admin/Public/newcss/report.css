@@ -1,0 +1,97 @@
+html { font-size: 72.5%;
+}
+body{
+background: url() #F1F1F1 repeat-x top;
+text-align:center; 
+
+}
+input[type='text'],input[type='password']{
+	height:20px;
+	width:200px;
+	background:url("../images/input-bg.png") repeat-x scroll 0 0 #FFFFFF
+}
+
+
+textarea{
+    width:260px;
+	height:170px;
+}
+div .span-7 div{
+	margin:1px;
+	padding:1px;
+	 
+}
+.container{
+    padding:10px;
+	border:1px solid;
+	border-color: black; outline: 2px solid #B9B9B9;
+	
+}
+.boxout1 {background: #BCBCBC;  margin-top: 14px; margin-bottom: 12px;}
+.boxin1 {background: white; position: relative; left: -105px;  top: -1px;border:1px solid #828282;}
+
+.none{
+display:none;
+}
+
+#reportdiv {
+text-align:center
+ 
+} 
+.reporttable {
+margin: 0 auto; 
+padding: 0;
+ 
+ 
+}
+tr:hover{background-color:#ccc}
+caption {
+padding: 0 0 5px 0;
+width: 90%;
+font: italic 15px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+text-align: center;
+	font: italic bold 16px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+
+}
+
+th {
+font: bold 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+color: #4f6b72;
+border-right: 1px solid #C1DAD7;
+border-bottom: 1px solid #C1DAD7;
+border-top: 1px solid #C1DAD7;
+letter-spacing: 2px;
+text-transform: uppercase;
+text-align: left;
+padding: 6px 6px 6px 12px;
+background: #CAE8EA  no-repeat;
+}
+/*power by www.winshell.cn*/
+th.nobg {
+border-top: 0;
+border-left: 0;
+border-right: 1px solid #C1DAD7;
+background: none;
+}
+
+td {
+border-right: 1px solid #C1DAD7;
+border-bottom: 1px solid #C1DAD7;
+background: #fff;
+font-size:13px;
+padding: 6px 6px 6px 12px;
+color: #4f6b72;
+}
+ 
+ .spec {
+ background: #F5FAFA;
+	 color: red  ;
+	font: bold 16px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+}
+
+ .spec td{
+ background: #F5FAFA;
+	 color: red  ;
+	font: bold 16px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+}
+ 

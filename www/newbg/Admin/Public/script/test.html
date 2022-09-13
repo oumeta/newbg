@@ -1,0 +1,45 @@
+<script src=genv.js></script>
+
+<script src=jquery-1.5.min.js></script>
+<div id="ok">asdf</div>
+<script type="text/javascript">
+<!--
+	var AppPage;
+Class.set("Iframe", {
+	initialize: function(id,h){  	
+		 this.create(id,h)
+	     this.h=10
+		 frame=true
+		  
+	},
+	create:function(id,h){
+	   this.id=id;
+	  
+       iframe=$("<iframe id='"+id+"' src='' margin=0 frameborder=0 border=0 width='100%' ></iframe>").appendTo($('#ok'));
+	   
+	   iframe.height(h);
+	   
+	},
+    resize:function(h){	
+		 alert(h)
+			 alert(this.id)
+	    $("#"+this.id).height(h);
+	
+	},
+	load:function(src){
+		 
+		$("#"+this.id).attr("src",src);
+	
+	},
+    reload:function(){
+	
+	  $("#"+this.id).attr("src", $("#"+this.id).attr("src"));
+	
+	}
+});
+
+var p=new Iframe('ok1',300)
+p.load('http://www.baidu.com')
+p.resize(500)
+//-->
+</script>

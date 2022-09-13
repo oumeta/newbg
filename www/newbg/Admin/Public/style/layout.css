@@ -1,0 +1,1943 @@
+@charset "utf-8";
+	body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,
+form,fieldset,textarea,p,th,td {
+	padding: 0;
+	margin: 0;
+}
+table {
+	border-collapse: collapse;
+	font-size: 12px;
+}
+img {
+	border: 0;
+	vertical-align: middle;
+}
+address,caption,cite,code,dfn,em,strong,th,var {
+	font-weight: 400;
+	font-style: normal;
+}
+ul {
+	list-style: none;
+}
+caption,th {
+	text-align: left;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-weight: 400;
+}
+q: before, q: after {
+	content: '';
+}
+body {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 12px;
+	overflow: auto;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	background: #fff;
+}
+a {
+	text-decoration: underline
+}
+a:hover {
+	text-decoration: underline
+}
+input {
+	padding: 0;
+	cursor: pointer;
+}
+html,body {
+	overflow: hidden;
+	height: 100%;
+}
+/* clearfix*/
+	.clearfix {
+	zoom: 1;
+}
+.clearfix: after {
+	content: '.';
+	display: block;
+	height: 0;
+	visibility: hidden;
+	clear: both;
+}
+.none{display:none;}
+/*---- background ----*/
+	.bodybg {
+	background: #edf0f2;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+/*---- background (page.png)----*/
+	.loginimg,.loginad,.logo,.logos,.loginlogo,.uploadimg,.uploadimggray,.userenter,.adfile,.adsend,.entermail,.sendmail,.serviceicon
+,.enterimg,.logintitle,.entertitle,.downloadtitle,.activation,.emailtitle,.mailtitle,.settingtitle,.pwstitle,.uploadfile p.addright .addimg,.leftsideicon,.sendicon,.inboxicon,.drafticon,.leftsidemyicon,.adlogin,.frameheader,.framebottom,.close,.closes,.min,.successright,.icondoc,.successicons, .sending,.iconnews,.adding,.minus,.helpicon,.helplist li em,.helpfoot h2,.contacticon,.contacsearch,.contactbutton,.clearbutton,.contactbuttons,.clearbuttons,
+.contactstar,.square,.toolsicon,.currentitle,.files,.aimicons,.paperclip,.question,.full,.portmainlist li em,.leftsendicon,.msnicons,.emailicons,.qqicons,.sendicons,.dbankicons,.triangularicon,.titleicon,.mesicon,.qqicon,.ficon,.changebutton,.changegraybutton,
+.step1,.step2,.step3,.leftlinkicon,.updatebtn {
+	background: url(../images/page.png) no-repeat;
+	overflow: hidden;
+}
+/*---- button (button.png)----*/
+	.enterbutton,.fulfillbutton,.fullbutton,.pwsbutton,.loginbutton,.uploadbutton,.delbutton,.datebutton,.sendbutton,.shiftbutton,.cancelbutton,.confirmbutton,.confirmgraybutton,.removebutton,.downloadbutton,.addbutton,.closebutton,.fulfillbutton,.addfilebutton,.movebutton,.shiftgraybutton,.exportbutton,.importbutton,.importgraybutton,.addgroupbutton,.addcontactbutton,.allowedupbutton,.allowedupgraybutton,.cancelupbutton,.cancelupgraybutton,.transferredbutton,.addsbutton,.cimportbutton,.copybutton,.copygraybutton,.cancelgraybutton,.copysbutton,.keepdiskbutton,.addgraybutton,
+.savebutton,.delinkbutton,.linkbutton,.linkgraybutton,.sendmailbutton,.homebutton,.delgraybutton,.sendiconbutton,.sendicongraybutton,.selectbutton,.shiftdiskbutton,.forwardbutton,.largefilesbutton,.movegraybutton,.uploadgraybutton,.sendgraybutton,.addfilegraybutton,.uploadfile span.file,.portmainlist .files,.invitesendbutton,.invitesendgraybutton,.invitemsnbutton,.invitemailbutton,.invitemsngraybutton,.invitemailgraybutton,.affirmbutton,.inviteqqbutton,.inviteqqgraybutton,.switchbutton,.updatebutton,
+.addlinkbutton,.stopbutton,.resumebutton,.editbutton,.ignorebutton,.creatlinkbutton,.dellinkbutton,.updatelinkbutton {
+	border: 0;
+	background: url(../images/button.png) no-repeat;
+	overflow: hidden;
+	cursor: pointer;
+}
+/*---- background (page_y.jpg)----*/
+	.head,.header,.headbg,.loginhearder,.loadingbg,.loadingbg span,.datahead,.leftsidemytitle,.datetitle,.frameheader,.sending em,.newshead,.leftsidetitlebg,.active,.activetitle,.leftsidebottom a:hover,.hrline,.wrapheader,.loadingraybg span {
+	
+}
+/*---- background (icon.png)----*/
+	.image,.audio,.video,.document,.compress,.application,.web,.file,.imagegray,.audiogray,.videogray,.documentgray,.compressgray,.applicationgray,.webgray,.filegray,.imageicon,.audioicon,.videoicon,.documenticon,.compressicon,.applicationicon,.webicon,.fileicon {
+	background: url(../images/icon.png) no-repeat;
+	overflow: hidden;
+}
+/*---- layout ----*/
+	.contentmin {
+	padding-bottom: 31px;
+}
+/*---- logo ----*/
+	.logo {
+	width: 130px;
+	height: 35px;
+	display: block;
+	background-position: -212px 0;
+	cursor: pointer;
+	float: left;
+	margin: 10px 0;
+	position: relative;
+	left: 30px;
+	overflow: hidden;
+}
+.loginlogo {
+	width: 130px;
+	height: 35px;
+	display: block;
+	background-position: -212px 0;
+	cursor: pointer;
+	margin: 15px 0 0 20px;
+	float: left;
+	overflow: hidden;
+}
+.logos {
+	clear: both;
+	width: 150px;
+	height: 45px;
+	margin: 0 auto;
+	display: block;
+	background-position: 0 0;
+	cursor: pointer;
+	overflow: hidden;
+}
+/*---- head ----*/
+.headbg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	display: block;
+	z-index: 5;
+	overflow: hidden;
+	color: #fff;
+	min-width: 700px;
+}
+.head {
+	width: 100%;
+	height: 55px;
+	background-position: 0 -129px;
+	position: relative;
+	right: 0;
+	z-index: 6;
+	overflow: hidden;
+}
+.headbgleft {
+	background-position: 0 -126px;
+	width: 370px;
+	height: 60px;
+	padding: 0 10px 0 20px;
+	position: absolute;
+	left: 0;
+	z-index: 5;
+}
+.header {
+	height: 60px;
+	width: 100%;
+	margin: 0 auto 10px;
+	background-position: 0 -129px;
+	text-align: left;
+}
+/*---- hearder ----*/
+	.hearder {
+	padding: 15px 0 0;
+	text-align: center;
+	width: 920px;
+	margin: 0 auto;
+}
+.hearder h1 {
+	width: 200px;
+	float: right;
+	font-size: 12px;
+	margin-bottom: 30px;
+}
+.hearder h1 a {
+	color: #000;
+	text-decoration: underline
+}
+.hearder h1 a:hover {
+	color: #c00;
+}
+.hearder h1 em {
+	position: relative;
+	top: 5px;
+	*top: 3px;
+	margin-right: 3px;
+}
+/*---- sidescroll ----*/
+	.sidescroll {
+	width: 8px;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 199px;
+	bottom: 0;
+	background: #edf0f2;
+	z-index: 4;
+	border-bottom: 0;
+}
+.sidescroll span {
+	width: 3px;
+	height: 24px;
+	display: block;
+	position: relative;
+	top: 50%;
+	left: 3px;
+	background: url(../images/page.png) no-repeat -497px -72px;
+}
+/*---- left ----*/
+	.leftbg {
+	position: relative;
+	z-index: 4;
+	height: 100%;
+	background: #000;
+	width: 207px;
+	overflow: hidden;
+	background: #edf0f2;
+}
+.left {
+	position: absolute;
+	left: 10px;
+	top: 61px;
+	bottom: 23px;
+	width: 100%;
+	background: #fff;
+	z-index: 4;
+	border: 1px solid #edf0f2;
+	border-left: 0;
+	border-right: 0;
+}
+* html .left {
+	position: relative;
+	top: 0;
+	left: 10px;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	border-top: 62px solid #edf0f2;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 23px solid #edf0f2;
+}
+/*---- content ----*/
+	.contents {
+	position: absolute;
+	top: 62px;
+	bottom: 20px;
+	left: 207px;
+	right: 0;
+	z-index: 3;
+	color: #000;
+	border-top: 0;
+	background: #fff;
+	border-bottom: 96px solid #fff;
+}
+* html .contents {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	max-height: 100%;
+	border-top: 62px solid #edf0f2;
+	border-bottom: 207px solid #fff;
+	border-left: 207px solid #edf0f2;
+}
+.mailbox {
+	position: absolute;
+	top: 62px;
+	bottom: 21px;
+	left: 207px;
+	right: 0;
+	z-index: 3;
+	color: #000;
+	border-top: 0;
+	background: #fff;
+	border-bottom: 66px solid #fff;
+}
+* html .mailbox {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	max-height: 100%;
+	border-top: 62px solid #edf0f2;
+	border-bottom: 147px solid #fff;
+	border-left: 207px solid #c4c4c4;
+}
+.contentsm {
+	height: 100%;
+	background: #fff;
+	border: 0;
+	overflow-y: auto;
+	overflow-x: hidden;
+	border-left: 1px solid #c4c4c4
+}
+.sendcontentmain {
+	/*mix-width: 780px;*/
+	height: 100%;
+	background: #fff;
+	border: 0;
+	overflow-y: auto;
+	overflow-x: hidden;
+	border-left: 1px solid #c4c4c4;
+	margin-bottom: -1px;
+}
+/*---- foot ----*/
+	.contentfoot {
+	position: absolute;
+	bottom: 0;
+	*bottom: -1px;
+	left: 0;
+	width: 100%;
+	height: 20px;
+	z-index: 10;
+	overflow: hidden;
+	background: #edf0f2;
+}
+.contentfootleft {
+	float: left;
+}
+.contentfootright {
+	float: right;
+	padding-right: 20px;
+}
+/*---- new menu ----*/
+	.leftsidetitlebg {
+	height: 28px;
+	line-height: 28px;
+	padding: 0 0 0 9px;
+	*padding: 2px 0 0 9px;
+	font-size: 14px;
+	font-weight: 700;
+	color: #000;
+	background-position: 0 -450px;
+	border-left: 1px solid #c4c4c4;
+	cursor: pointer;
+	overflow: hidden;
+}
+.leftsidebottom {
+	position: absolute;
+	bottom: -4px;
+	width: 100%;
+	border-bottom: 0;
+	border-left: 1px solid #c4c4c4;
+	background: #c4c4c4;
+	z-index: 10;
+}
+ 
+.leftsidebottom li{
+	/*giving UL's LIs generated disc markers*/
+	 
+	 list-style:none; 
+
+}
+.leftsidebottom li.hrline {
+	height: 4px;
+	*height: auto;
+	font-size: 4px;
+	margin-top: 1px;
+	background-position: 0 -569px;
+}
+.leftsidebottom li a {
+	display: block;
+	text-decoration: none
+}
+.leftsidebottom li a:hover {
+	color: red;
+	text-decoration: none;
+	background-position: 0 -510px;
+}
+.leftsidebottom a.activetitle {
+	height: 28px;
+	line-height: 28px;
+	margin-top: 1px;
+	font-size: 14px;
+	font-weight: 700;
+	color: #000;
+	background-position: 0 -480px;
+	cursor: pointer;
+	overflow: hidden;
+}
+.leftsidebottom a.activetitle span {
+	margin: 5px 5px 5px 10px;
+	vertical-align: top;
+	*vertical-align: middle;
+}
+.leftsidebottom a.active {
+	height: 28px;
+	line-height: 28px;
+	margin-top: 1px;
+	font-size: 14px;
+	font-weight: 700;
+	color: #412001;
+	background-position: 0 -540px;
+	overflow: hidden;
+}
+.leftsidebottom a.active span {
+	margin: 5px 5px 5px 10px;
+	vertical-align: top;
+	*vertical-align: middle;
+}
+/*---- other button ----*/
+	.inputfile {
+	width: 500px;
+	height: 25px;
+}
+.inputext {
+	width: 263px;
+	height: 16px;
+	*height: 22px;
+	border: 1px solid #98a3b3;
+	padding: 2px 0 2px 2px;
+	line-height: 16px;
+	cursor: text;
+}
+.inputextpsw {
+	width: 154px;
+	height: 16px;
+	*height: 22px;
+	border: 1px solid #98a3b3;
+	padding: 2px 0 2px 2px;
+	line-height: 16px;
+	cursor: text;
+}
+.inputextgray {
+	height: 16px;
+	*height: 22px;
+	border: 1px solid #98a3b3;
+	padding: 2px 0 2px 2px;
+	line-height: 16px;
+	cursor: text;
+}
+.inpuaddtext {
+	width: 221px;
+	*width: 225px;
+	height: 16px;
+	*height: 22px;
+	border: 1px solid #99a1ac;
+	padding: 2px 0 2px 2px;
+	line-height: 16px;
+	cursor: text;
+}
+.inputselect {
+	width: 225px;
+	height: 21px;
+	border: 1px solid #99a1ac;
+}
+.inputextmin {
+	width: 80px;
+	height: 16px;
+	*height: 22px;
+	border: 1px solid #98a3b3;
+	padding: 2px 0 2px 2px;
+	line-height: 16px;
+}
+/*---- button ----*/
+	.marginbutton {
+	margin: 50px 0 130px;
+	*margin: 35px 0 130px;
+}
+.enterbutton {
+	width: 67px;
+	height: 26px;
+	background-position: 0 0;
+}
+.fulfillbutton {
+	width: 71px;
+	height: 26px;
+	background-position: 0 -26px;
+}
+.pwsbutton {
+	width: 93px;
+	height: 26px;
+	background-position: 0 -52px;
+}
+.savebutton {
+	width: 93px;
+	height: 26px;
+	background-position: 0 -78px;
+}
+.addcontactbutton {
+	width: 94px;
+	height: 23px;
+	background-position: 0 -104px;
+}
+.downloadbutton {
+	width: 93px;
+	height: 26px;
+	background-position: 0 -127px;
+}
+.loginbutton {
+	width: 91px;
+	height: 26px;
+	background-position: 0 -153px;
+}
+.allowedupgraybutton {
+	width: 81px;
+	height: 23px;
+	background-position: 0 -179px;
+}
+.allowedupbutton {
+	width: 81px;
+	height: 23px;
+	background-position: 0 -202px;
+}
+.addfilebutton {
+	width: 82px;
+	height: 23px;
+	background-position: 0 -225px;
+}
+.cimportbutton {
+	width: 66px;
+	height: 23px;
+	background-position: 0 -248px;
+}
+.sendiconbutton {
+	width: 60px;
+	height: 23px;
+	background-position: 0 -294px;
+}
+.addfilegraybutton {
+	width: 82px;
+	height: 23px;
+	background-position: 0 -271px;
+}
+.copybutton {
+	width: 66px;
+	height: 23px;
+	background-position: 0 -317px;
+}
+.copygraybutton {
+	width: 66px;
+	height: 23px;
+	background-position: 0 -340px;
+}
+.addgraybutton {
+	width: 86px;
+	height: 23px;
+	background-position: 0 -363px;
+}
+.invitesendbutton {
+	width: 81px;
+	height: 23px;
+	background-position: 0 -386px;
+}
+.invitesendgraybutton {
+	width: 81px;
+	height: 23px;
+	background-position: 0 -409px;
+}
+.switchbutton {
+	width: 53px;
+	height: 23px;
+	background-position: 0 -409px;
+}
+.selectbutton {
+	width: 53px;
+	height: 23px;
+	background-position: 0 -432px;
+}
+.sendicongraybutton {
+	width: 60px;
+	height: 23px;
+	background-position: 0 -481px;
+}
+.ignorebutton {
+	width: 55px;
+	height: 26px;
+	background-position: 0 -504px;
+}
+.importgraybutton {
+	width: 77px;
+	height: 23px;
+	background-position: -94px 0;
+}
+.importbutton {
+	width: 77px;
+	height: 23px;
+	background-position: -94px -23px;
+}
+.exportbutton {
+	width: 77px;
+	height: 23px;
+	background-position: -94px -46px;
+}
+.delinkbutton {
+	width: 77px;
+	height: 23px;
+	background-position: -94px -69px;
+}
+.shiftgraybutton {
+	width: 77px;
+	height: 23px;
+	background-position: -94px -92px;
+}
+.shiftbutton {
+	width: 77px;
+	height: 23px;
+	background-position: -94px -115px;
+}
+.addgroupbutton {
+	width: 79px;
+	height: 23px;
+	background-position: -94px -138px;
+}
+.movebutton {
+	width: 66px;
+	height: 23px;
+	background-position: -94px -184px;
+}
+.cancelupgraybutton {
+	width: 81px;
+	height: 23px;
+	background-position: -94px -207px;
+}
+.cancelupbutton {
+	width: 81px;
+	height: 23px;
+	background-position: -94px -230px;
+}
+.addbutton {
+	width: 86px;
+	height: 23px;
+	background-position: -94px -253px;
+}
+.homebutton {
+	width: 98px;
+	height: 26px;
+	background-position: -94px -276px;
+}
+.sendmailbutton {
+	width: 98px;
+	height: 26px;
+	background-position: -94px -302px;
+}
+.shiftdiskbutton {
+	width: 90px;
+	height: 23px;
+	background-position: -94px -328px;
+}
+.largefilesbutton {
+	width: 101px;
+	height: 23px;
+	background-position: -94px -351px;
+}
+.keepdiskbutton {
+	width: 91px;
+	height: 26px;
+	background-position: -94px -374px;
+}
+.affirmbutton {
+	width: 55px;
+	height: 23px;
+	background-position: -94px -400px;
+}
+.cancelbutton {
+	width: 55px;
+	height: 23px;
+	background-position: -171px 0;
+}
+.uploadbutton {
+	width: 55px;
+	height: 23px;
+	background-position: -171px -23px;
+}
+.removebutton {
+	width: 55px;
+	height: 23px;
+	background-position: -171px -46px;
+}
+.closebutton {
+	width: 55px;
+	height: 23px;
+	background-position: -171px -69px;
+}
+.sendbutton {
+	width: 55px;
+	height: 23px;
+	background-position: -171px -92px;
+}
+.transferredbutton {
+	width: 55px;
+	height: 23px;
+	background-position: -171px -115px;
+}
+.forwardbutton {
+	width: 55px;
+	height: 23px;
+	background-position: -171px -161px;
+}
+.datebutton {
+	width: 55px;
+	height: 23px;
+	background-position: -226px 0;
+}
+.delbutton {
+	width: 55px;
+	height: 23px;
+	background-position: -226px -23px;
+}
+.fullbutton {
+	width: 55px;
+	height: 23px;
+	background-position: -226px -46px;
+}
+.confirmbutton {
+	width: 55px;
+	height: 23px;
+	background-position: -226px -69px;
+}
+.confirmgraybutton {
+	width: 55px;
+	height: 23px;
+	background-position: -94px -423px;
+}
+.linkbutton {
+	width: 55px;
+	height: 23px;
+	background-position: -226px -92px;
+}
+.addsbutton {
+	width: 55px;
+	height: 23px;
+	background-position: -226px -115px;
+}
+.delgraybutton {
+	width: 55px;
+	height: 23px;
+	background-position: -226px -138px;
+}
+.linkgraybutton {
+	width: 55px;
+	height: 23px;
+	background-position: -226px -161px;
+}
+.sendgraybutton {
+	width: 55px;
+	height: 23px;
+	background-position: -226px -184px;
+}
+.uploadgraybutton {
+	width: 55px;
+	height: 23px;
+	background-position: -226px -207px;
+}
+.cancelgraybutton {
+	width: 55px;
+	height: 23px;
+	background-position: -226px -230px;
+}
+.movegraybutton {
+	width: 66px;
+	height: 23px;
+	background-position: -160px -184px;
+}
+.copysbutton {
+	width: 55px;
+	height: 23px;
+	background-position: -226px -253px;
+}
+s
+.invitemsnbutton {
+	width: 100px;
+	height: 23px;
+	background-position: -198px -299px;
+}
+.invitemsngraybutton {
+	width: 100px;
+	height: 23px;
+	background-position: -198px -322px;
+}
+.invitemailbutton {
+	width: 100px;
+	height: 23px;
+	background-position: -198px -345px;
+}
+.invitemailgraybutton {
+	width: 100px;
+	height: 23px;
+	background-position: -198px -368px;
+}
+.inviteqqbutton {
+	width: 100px;
+	height: 23px;
+	background-position: -198px -391px;
+}
+.inviteqqgraybutton {
+	width: 100px;
+	height: 23px;
+	background-position: -198px -414px;
+}
+.changebutton {
+	width: 75px;
+	height: 20px;
+	background-position: -378px -265px;
+}
+.changegraybutton {
+	width: 75px;
+	height: 20px;
+	background-position: -378px -285px;
+	cursor: default
+}
+.updatebutton {
+	width: 55px;
+	height: 23px;
+	background-position: -243px -437px;
+}
+.addlinkbutton {
+	width: 81px;
+	height: 23px;
+	background-position: -60px -481px;
+}
+.editbutton {
+	width: 55px;
+	height: 23px;
+	background-position: -141px -481px;
+}
+.stopbutton {
+	width: 55px;
+	height: 23px;
+	background-position: -243px -460px;
+}
+.resumebutton {
+	width: 55px;
+	height: 23px;
+	background-position: -243px -483px;
+}
+.creatlinkbutton {
+	width: 81px;
+	height: 23px;
+	background-position: -55px -504px;
+}
+.dellinkbutton {
+	width: 81px;
+	height: 23px;
+	background-position: -136px -504px;
+}
+.updatelinkbutton {
+	width: 81px;
+	height: 23px;
+	background-position: 0px -530px;
+}
+/*---- icon ----*/
+	.image {
+	width: 26px;
+	height: 31px;
+	float: left;
+	margin-right: 7px;
+	background-position: -179px 0;
+}
+.audio {
+	width: 31px;
+	height: 31px;
+	float: left;
+	margin-right: 7px;
+	background-position: -311px 0;
+}
+.video {
+	width: 27px;
+	height: 31px;
+	float: left;
+	margin-right: 7px;
+	background-position: -223px 0;
+}
+.document {
+	width: 25px;
+	height: 31px;
+	float: left;
+	margin-right: 7px;
+	background-position: -135px 0;
+}
+.compress {
+	width: 28px;
+	height: 31px;
+	float: left;
+	margin-right: 7px;
+	background-position: -43px 0;
+}
+.application {
+	width: 27px;
+	height: 31px;
+	float: left;
+	margin-right: 7px;
+	background-position: -268px 0;
+}
+.web {
+	width: 28px;
+	height: 31px;
+	float: left;
+	margin-right: 7px;
+	background-position: -88px 0;
+}
+.file {
+	width: 25px;
+	height: 31px;
+	float: left;
+	margin-right: 7px;
+	background-position: 0 0;
+}
+.msnicons {
+	background-position: -378px -87px;
+}
+.emailicons {
+	background-position: -431px -87px;
+}
+.qqicons {
+	background-position: -378px -139px;
+}
+.sendicons {
+	background-position: -431px -139px;
+}
+.dbankicons {
+	background-position: -378px -191px;
+}
+.triangularicon {
+	width: 5px;
+	height: 9px;
+	display: inline-block;
+	background-position: -385px -30px;
+}
+.titleicon {
+	width: 13px;
+	height: 12px;
+	display: inline-block;
+	background-position: -248px -35px;
+}
+/*---- icon gray ----*/
+	.imagegray {
+	width: 26px;
+	height: 31px;
+	float: left;
+	margin-right: 7px;
+	background-position: -179px -49px;
+}
+.audiogray {
+	width: 31px;
+	height: 31px;
+	float: left;
+	margin-right: 7px;
+	background-position: -311px -49px;
+}
+.videogray {
+	width: 27px;
+	height: 31px;
+	float: left;
+	margin-right: 7px;
+	background-position: -223px -49px;
+}
+.documentgray {
+	width: 25px;
+	height: 31px;
+	float: left;
+	margin-right: 7px;
+	background-position: -135px -49px;
+}
+.compressgray {
+	width: 28px;
+	height: 31px;
+	float: left;
+	margin-right: 7px;
+	background-position: -43px -49px;
+}
+.applicationgray {
+	width: 27px;
+	height: 31px;
+	float: left;
+	margin-right: 7px;
+	background-position: -268px -49px;
+}
+.webgray {
+	width: 28px;
+	height: 31px;
+	float: left;
+	margin-right: 7px;
+	background-position: -88px -49px;
+}
+.filegray {
+	width: 25px;
+	height: 31px;
+	float: left;
+	margin-right: 7px;
+	background-position: 0 -49px;
+}
+/*---- min icon ----*/
+	.imageicon {
+	width: 14px;
+	height: 16px;
+	background-position: 0 -220px;
+}
+.audioicon {
+	width: 14px;
+	height: 16px;
+	background-position: 0 -240px;
+}
+.videoicon {
+	width: 14px;
+	height: 16px;
+	background-position: 0 -140px;
+}
+.documenticon {
+	width: 14px;
+	height: 16px;
+	background-position: 0 -120px;
+}
+.compressicon {
+	width: 14px;
+	height: 16px;
+	background-position: 0 -180px;
+}
+.applicationicon {
+	width: 14px;
+	height: 16px;
+	background-position: 0 -200px;
+}
+.webicon {
+	width: 14px;
+	height: 16px;
+	background-position: 0 -160px;
+}
+.fileicon {
+	width: 14px;
+	height: 16px;
+	background-position: 0 -100px;
+}
+.margintop {
+	margin: 90px 0 0;
+	line-height: 20px;
+}
+.paddingtop {
+	padding: 25px 0 0;
+}
+.redline {
+	border: 1px solid #f00;
+}
+.loginimg {
+	width: 14px;
+	height: 16px;
+	background-position: -355px 0;
+	display: inline-block;
+}
+.enterimg {
+	width: 13px;
+	height: 14px;
+	background-position: -342px 0;
+	display: inline-block;
+	position: relative;
+	top: 4px;
+	*top: 2px;
+	margin-right: 3px;
+}
+.loginad {
+	position: relative;
+	top: 1px;
+	padding-left: 15px;
+	display: inline-block;
+	width: 48px;
+	height: 14px;
+	background-position: -370px 0;
+}
+.adfile {
+	width: 58px;
+	height: 13px;
+	background-position: -438px -17px
+}
+.adsend {
+	width: 58px;
+	height: 14px;
+	background-position: -438px 0
+}
+.adlogin {
+	width: 58px;
+	height: 14px;
+	background-position: -376px 0
+}
+.close {
+	width: 9px;
+	height: 9px;
+	background-position: -317px -38px;
+}
+.closes {
+	width: 9px;
+	height: 5px;
+	background-position: -339px -38px;
+}
+.min {
+	width: 8px;
+	height: 8px;
+	background-position: -303px -37px;
+}
+.icondoc {
+	height: 16px;
+	background-position: 0 -404px;
+}
+.iconnews {
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	background-position: 0 -443px;
+}
+.helpicon {
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	background-position: -388px -180px;
+}
+.leftsidemyicon {
+	width: 20px;
+	height: 16px;
+	display: inline-block;
+	background-position: 0 -56px;
+}
+.leftsideicon {
+	width: 20px;
+	height: 17px;
+	display: inline-block;
+	background-position: -25px -55px;
+}
+.sendicon {
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	background-position: -183px -68px;
+}
+.inboxicon {
+	width: 20px;
+	height: 17px;
+	display: inline-block;
+	background-position: -163px -71px;
+	vertical-align: text-bottom;
+}
+.drafticon {
+	width: 20px;
+	height: 17px;
+	display: inline-block;
+	background-position: -143px -71px;
+	vertical-align: text-bottom;
+}
+.contacticon {
+	width: 20px;
+	height: 19px;
+	display: inline-block;
+	background-position: -49px -53px;
+}
+.mesicon {
+	width: 14px;
+	height: 14px;
+	display: inline-block;
+	background-position: -262px -35px;
+}
+.qqicon {
+	width: 15px;
+	height: 16px;
+	display: inline-block;
+	background-position: -342px -70px;
+	margin: 0 4px;
+	vertical-align: text-bottom;
+}
+.ficon {
+	width: 15px;
+	height: 14px;
+	display: inline-block;
+	background-position: -280px -35px;
+	margin-right: 4px;
+	vertical-align: text-bottom;
+}
+.contactstar {
+	width: 13px;
+	height: 13px;
+	display: inline-block;
+	background-position: -104px -59px;
+	margin-right: 5px;
+	position: relative;
+	top: 2px;
+	*top: 0
+}
+.toolsicon {
+	width: 13px;
+	height: 13px;
+	display: inline-block;
+	background-position: -88px -59px;
+	margin-right: 4px;
+	position: relative;
+	top: 2px;
+	*top: 0
+}
+.aimicons {
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	background-position: -369px 0;
+}
+.successicons {
+	width: 11px;
+	height: 10px;
+	background-position: -399px -19px;
+	display: inline-block;
+	position: relative;
+	top: 1px;
+	*top: -1px
+}
+.userenter {
+	width: 95px;
+	height: 15px;
+	cursor: pointer;
+	background-position: -80px -79px;
+}
+.entermail {
+	width: 223px;
+	height: 36px;
+	display: inline-block;
+	background-position: -128px -88px;
+}
+.sendmail {
+	width: 246px;
+	height: 36px;
+	display: inline-block;
+	background-position: -128px -124px;
+}
+.activation {
+	width: 153px;
+	height: 36px;
+	display: inline-block;
+	background-position: -224px -361px;
+}
+.minus {
+	width: 9px;
+	height: 9px;
+	display: inline-block;
+	background-position: -369px -20px;
+}
+.adding {
+	width: 9px;
+	height: 9px;
+	display: inline-block;
+	background-position: -378px -20px;
+}
+ .currentitle {
+	width: 25px;
+	height: 25px;
+	display: inline-block;
+	background-position: -475px -47px;
+}
+.question {
+	width: 12px;
+	height: 12px;
+	background-position: -234px -35px;
+	display: inline-block;
+}
+.full {
+	width: 17px;
+	height: 17px;
+	background-position: -385px 0;
+	display: inline-block
+}
+.paperclip {
+	width: 12px;
+	height: 12px;
+	display: inline-block;
+	background-position: -70px -60px;
+	position: relative;
+	top: 2px;
+	*top: 1px;
+}
+.blue {
+	width: 5px;
+	height: 9px;
+	display: inline-block;
+	background-position: -385px -30px;
+}
+.square {
+	width: 4px;
+	height: 4px;
+	background-position: -390px -22px;
+	display: inline-block;
+	margin-right: 4px;
+	position: relative;
+	top: -2px;
+	*top: -4px;
+}
+.leftlinkicon {
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	background-position: -481px -363px;
+}
+/*---- font ----*/
+	.entertitle {
+	width: 60px;
+	background-position: 0 -74px;
+}
+.emailtitle {
+	width: 125px;
+	background-position: 0 -218px;
+}
+.mailtitle {
+	width: 111px;
+	background-position: 0 -253px;
+}
+.pwstitle {
+	width: 120px;
+	background-position: 0 -146px;
+}
+.downloadtitle {
+	width: 120px;
+	background-position: 0 -180px;
+	font-size: 0;
+	line-height: 0;
+}
+.logintitle {
+	width: 60px;
+	background-position: 0 -109px;
+}
+/*---- content ----*/
+	.content {
+	text-align: center
+}
+/*---- headside ----*/
+.headside {
+	float: left;
+	margin: 10px 0 10px 53px;
+	position: relative;
+	
+}
+.headside h1 {
+	position: relative;
+	font-size: 12px;
+	color: #c7d5e2;
+	text-align: left;
+	padding-right: 23px;
+}
+.headside h1 strong {
+	font-weight: 700;
+}
+.headside span {
+	color: #c7d5e2;
+	padding: 0;
+	margin-right: 20px;
+	display: inline;
+	cursor: default;
+}
+.headside span a {
+	color: #c7d5e2;
+}
+.headside span.uploadclienticon {
+	margin-left: 20px;
+}
+.headside p {
+	padding-top: 5px;
+}
+.headside span.uploadclienticon em {
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	background: url(../images/sprites.png) no-repeat 0 -1940px;
+	vertical-align: middle;
+	margin: 0 3px 0 8px;
+}
+/*---- headtip ----*/
+.headtip {
+	color: #2b2b2b;
+	width: 500px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	
+}
+.headtip #mymessage{
+	position: absolute;
+	top:0px;
+	left: -101px;
+	bottom: 0;
+	border:0px solid red;
+	width:600px;
+	height:50px;
+}
+.headtip ul {
+	float: right;
+	padding-right: 23px;
+}
+.headtip li {
+	float: left;
+}
+.headtip li a {
+	margin: 0 8px;
+	color: #c7d5e2;
+}
+.headtip li a:hover {
+	color: #fff;
+}
+.headtip li.qq-service a {
+	margin: 0 8px 0 0;
+	*text-decoration: none;
+	*border-bottom: 1px solid #000;
+	*display: inline-block;
+}
+.headtip li.qq-service img {
+	margin: 0 2px 0 8px;
+}
+.headtip .sendsucces {
+	color: #408e16;
+	padding: 0;
+	margin-left: 48px;
+	*margin-left: 50px;
+	cursor: pointer;
+	float: right;
+	margin-right: 5px;
+}
+.headtip .sendsucces a {
+	color: #408e16;
+	margin-left: 6px;
+	text-decoration: none;
+}
+.headtip .sendsucces a:hover {
+	color: #408e16;
+	text-decoration: underline;
+}
+.headtip .sending {
+	width: 127px;
+	*width: 129px;
+	height: 15px;
+	color: #fff;
+	padding: 0 0 0 2px;
+	display: inline-block;
+	background-position: -143px -53px;
+	cursor: pointer;
+	position: relative;
+	text-align: center;
+	float: right;
+	margin-right: 5px;
+}
+.headtip .sending em {
+	height: 13px;
+	line-height: 13px;
+	position: absolute;
+	top: 1px;
+	left: 1px;
+	background-position: 0 -335px;
+	z-index: 1;
+}
+.headtip .sending cite {
+	position: absolute;
+	z-index: 100;
+	width: 127px;
+	left: 0;
+	text-align: center;
+}
+.wrapheader .head .headtip {
+	/*position: relative;*/
+	top: 28px;
+	z-index: 100
+}
+.wrapheader .head .headtip li a {
+	color: #2b2b2b;
+}
+.wrapheader .head .headtip .key {
+	width: 17px;
+	height: 18px;
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 4px;
+	cursor: pointer;
+	background: url(../other/images/page.png) no-repeat -372px 0;
+	overflow: hidden;
+}
+/*---- sendisplay ----*/
+	.sendisplay {
+	position: absolute;
+	top: 30px;
+	left: 60%;
+	width: 246px;
+	height: 55px;
+	background: url(../images/bluebg.png) no-repeat;
+	color: #fff;
+	z-index: 100
+}
+* html .sendisplay {
+	background: url(../images/bluebg.jpg) no-repeat;
+}
+*+html .sendisplay {
+	background: url(../images/bluebg.png) no-repeat;
+}
+.sendisplay h2 {
+	width: 87px;
+	float: left;
+	padding: 5px 0;
+	margin-right: 15px;
+	font-size: 18px;
+	font-weight: 700;
+	text-align: center;
+}
+.sendisplay h2 em {
+	font-size: 36px;
+	margin-left: 5px;
+}
+.sendisplay .textjustify {
+	float: left;
+	padding-top: 2px;
+}
+.sendisplay .textjustify p {
+	line-height: 17px;
+	white-space: nowrap;
+	font-family: Arial, Helvetica, sans-serif
+}
+/*---- loginhearder ----*/
+	.loginhearder {
+	height: 60px;
+	margin: 0 auto;
+	background-position: 0 -129px;
+	overflow: hidden;
+}
+.loginhearder h1 {
+	font-size: 12px;
+	color: #99a5b7;
+	float: right;
+	margin: 35px 0 0;
+	padding: 0 20px 0 0;
+}
+.loginhearder h1 a {
+	color: #99a5b7;
+}
+.loginhearder h1 a:hover {
+	color: #c00;
+}
+/*---- main ----*/
+	.main {
+	text-align: center;
+}
+.wrapmain {
+	width: 100%;
+	min-height: 100%;
+	_height: 100%;
+	text-align: center;
+	background: #FFF;
+}
+* html .wrapmain {
+	height: 100%;
+}
+.wrapheader {
+	width: 100%;
+	background-position: 0 -129px;
+}
+.wrapheader {
+	height: 75px;
+	background: transparent url(page_y.jpg) repeat-x scroll 0 -809px;
+	color: #000;
+}
+.wrapheader .head {
+	background: none;
+	overflow: visible;
+}
+.wrapheader .head .logo {
+	position: static;
+	display: block;
+	width: 171px;
+	height: 33px;
+	margin: 18px 40px 0 14px;
+	;padding: 0;
+	background: transparent url(split.png) no-repeat scroll 0 -307px;
+}
+.wrapheader .head .headside {
+	margin: 18px 0 0;
+}
+.wrapheader .head .headside h1 {
+	color: #263347;
+}
+.wrapheader .head .headside span {
+	color: #000;
+}
+.wrapheader .head a,.wrapheader .head a:hover {
+	color: #000;
+	text-decoration: underline;
+}
+.wrapcontent {
+	color: #000;
+	width: 766px;
+	margin: 20px auto 0;
+	padding-bottom: 35px;
+	text-align: center;
+}
+.wrapcontent .hd {
+	width: 766px;
+	min-width: 766px;
+	height: 34px;
+	border-bottom: 1px solid #bbc0c6;
+	background: none;
+}
+.wrapcontent .hd span {
+	float: left;
+}
+.wrapcontent .hd a {
+	float: left;
+	text-decoration: underline;
+}
+.wrapcontent .hd .reporticon {
+	margin: 10px 0 0 10px;
+	padding-left: 22px;
+	height: 14px;
+	line-height: 14px;
+	background: url(../other/images/icon.gif) no-repeat -133px -223px;
+	*background-position: -133px -224px;
+}
+.wrapcontent .dl {
+	width: 112px;
+	height: 28px;
+	background: url(../other/images/page.png) no-repeat -301px -61px;
+	display: inline-block;
+}
+.wrapcontent: after {
+	clear: both;
+	display: block;
+	font: 1px/0 serif;
+	content: ".";
+	height: 0;
+	visibility: hidden;
+}
+* html .wrapcontent {
+	height: 1%;
+}
+.foot {
+	height: 34px;
+	margin: -35px auto 0;
+	text-align: center;
+	border-top: 1px solid #cdcdcd;
+	color: #5d5c5c;
+}
+/*---- leftside ----*/
+	.leftnav {
+	width: 100%;
+	height: 100%;
+	color: #000;
+	border-top: 1px solid #c4c4c4;
+}
+.leftside {
+	word-wrap: break-word;
+	word-break: normal;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	overflow: hidden;
+	border-left: 1px solid #c4c4c4;
+}
+.leftsidemytitle {
+	height: 27px;
+	line-height: 27px;
+	font-size: 14px;
+	font-weight: 700;
+	color: #fff;
+	background-position: 0 -290px;
+	cursor: pointer
+}
+.leftsidemytitle span {
+	margin: 5px 5px 5px 10px;
+	vertical-align: top;
+	*vertical-align: middle
+}
+.leftsidetitle {
+	height: 27px;
+	border-bottom: 1px solid #bac8df;
+	line-height: 27px;
+	font-size: 14px;
+	font-weight: 700;
+	color: #000;
+	background: #e4eaf4;
+	cursor: pointer
+}
+.leftsidetitle span {
+	margin: 5px 5px 5px 10px;
+	vertical-align: top;
+	*vertical-align: middle
+}
+.leftsidemain {
+	padding: 1px 1px 20px;
+	*padding: 0px 10px 20px;
+	/*min-height: 50%;*/
+}
+.leftsidemains {
+	padding: 13px 5px 20px 25px;
+	*padding: 19px 5px 20px 25px;
+	min-height: 50%;
+}
+.leftsidemains h1 {
+	height: 20px;
+	line-height: 20px;
+}
+.leftsidemains h1 span.sendicon {
+	margin-right: 5px;
+	position: relative;
+	top: 2px;
+	*top: -4px;
+}
+.leftsidemains h1 a {
+	text-decoration: none;
+	font-size: 12px;
+	color: #000;
+	font-weight: 700;
+	padding: 2px 4px
+}
+.leftsidemains h1 a:hover {
+	background: #61799d;
+	color: #fff;
+	text-decoration: underline;
+	font-weight: 700;
+}
+.leftsidemains h1 a.check {
+	background: #61799d;
+	color: #fff;
+	text-decoration: underline;
+	font-weight: 700;
+	padding: 2px 4px
+}
+.leftsidemains ul {
+	margin: 19px 0;
+	*margin: 12px 0;
+}
+.leftsidemains li {
+	padding: 7px 2px 0;
+}
+.leftsidemains li a {
+	/*display: inline-block;*/
+	color: #000;
+	text-decoration: none;
+	padding: 1px 4px;
+	margin-left: 5px;
+}
+.leftsidemains li a:hover {
+	background: #61799d;
+	text-decoration: underline;
+	color: #fff;
+}
+.leftsidemains li a.check {
+	background: #61799d;
+	color: #fff;
+	text-decoration: underline;
+	zoom: 1
+}
+.leftsidemains li span {
+	display: inline-block;
+	width: 20px;
+	height: 17px;
+}
+.leftsidemains li em {
+	color: #000;
+	margin: 0;
+}
+.leftsidemains li a:hover em,.leftsidemains li a.check em {
+	color: #fff;
+}
+.leftsidemains p {
+	color: #000;
+	line-height: 20px;
+}
+.leftsidemains p.redbold {
+	color: #de1f00;
+	line-height: 24px;
+}
+.leftsidemains p.paddingtop {
+	padding: 50px 0 0;
+}
+.leftsidemains em {
+	color: #2e639e;
+}
+.leftsidemains em.colored {
+	color: #e60000
+}
+.leftsidemains em.bold {
+	font-weight: 700;
+	color: #000
+}
+.leftsidemains span.transinfo {
+	white-space: nowrap;
+	padding-right: 5px;
+	display: inline-block;
+	display: -moz-inline-box;
+	width: 70px;
+}
+.leftsidemains a {
+	padding-left: 15px;
+	color: #085bb7;
+}
+.leftsidemains a:hover {
+	color: #c00;
+}
+.leftsidenav {
+	padding: 0 1px;
+}
+.leftsidenav li {
+	line-height: 27px;
+	padding-left: 30px;
+	cursor: pointer;
+}
+.leftsidenav li.nonce {
+	background: #d1d9e5
+}
+.leftsidenav li: hover {
+	background: #d1d9e5
+}
+.leftsidenav li a {
+	color: #000;
+}
+.leftsidenav li a:hover {
+	color: #c00;
+}
+.leftsidelogin {
+	padding: 50px 0 20px;
+}
+.leftsidelogin a {
+	padding: 0 7px 0 0;
+	color: #085bb7;
+}
+.leftsidelogin a:hover {
+	color: #c00;
+}
+.content {
+	width: 100px;
+	background: #fff;
+}
+.content p {
+	margin: 12px
+}
+/*---- datatitle ----*/
+.datetitle {
+	height: 64px;
+	background-position: 0 -31px;
+	border-top: 1px solid #c4c4c4;
+	border-left: 1px solid #c4c4c4;
+	overflow: hidden;
+}
+.datetitle h1 {
+	font-size: 12px;
+	width: 95%;
+	color: #000;
+	height: 26px;
+	white-space: nowrap;
+	overflow: hidden;
+	padding-left: 19px;
+}
+.datetitle h1 span {
+	font-size: 14px;
+	line-height: 24px;
+	color: #000;
+	font-weight: 700;
+	position: relative;
+	top: 1px;
+	cursor: default;
+}
+.datetitle h1 em {
+	vertical-align: middle;
+	position: relative;
+	top: 0;
+}
+.datetitle h1 a {
+	color: #000;
+	_display: inline-block;
+	_vertical-align: baseline;
+	text-decoration: underline;
+	width: auto
+}
+.datetitle h1 a:hover {
+	color: #000;
+	text-decoration: underline;
+}
+.datetitle h1 cite strong {
+	font-weight: 700;
+	color: #c00;
+}
+.datetitle p {
+	padding-left: 14px;
+	color: #000;
+	margin: 12px 0 0;
+}
+.datetitle p.tip {
+	text-align: right;
+	color: #fb6c06;
+	font-weight: 700;
+	padding-right: 14px;
+}
+.datetitle ul {
+	padding: 8px 0 8px 20px;
+	width: 620px;
+}
+.datetitle li {
+	display: inline;
+	float: left;
+	margin-right: 8px;
+}
+.datetitle li select {
+	width: 79px;
+	filter: alpha(opacity=0);
+	margin-left: -6px;
+	-moz-opacity: .0;
+	opacity: .0;
+	position: relative;
+	top: 2px;
+	left: 7px;
+}
+.datetitle a {
+	height: 23px;
+	line-height: 22px;
+	font-size: 12px;
+	text-decoration: none;
+	font-weight: 400;
+	display: inline-block;
+	width: 50px;
+}
+.datetitle a.active {
+	display: inline-block;
+	height: 23px;
+	line-height: 23px;
+	background: url(../images/menubg.png) no-repeat center center;
+	color: #fff;
+	border: 0;
+	text-align: center;
+}
+.datetitle a.activetitle {
+	background: none;
+	color: #364559;
+	width: 50px;
+	text-align: center;
+}
+.datetitle a:hover {
+	text-decoration: none;
+}
+.datetitle a: active {
+	border: 0;
+}

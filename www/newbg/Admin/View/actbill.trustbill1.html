@@ -1,0 +1,119 @@
+<html xmlns:o=”urn:schemas-microsoft-com:office:office”xmlns:x=”urn:schemas-microsoft-com:office:excel”xmlns=”http://www.w3.org/TR/REC-html40″>
+<!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Transitional//EN” “http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd”><html>
+
+<head><meta http-equiv=”Content-type” content=”text/html;charset=UTF-8″ />
+<style id=”Classeur1_16681_Styles”></style>
+ <style type="text/css"  >
+	/*************************************
+    WELCOME TO THE PRINT STYLESHEET
+--------------------------------------
+              print.css
+        BlueTrip CSS Framework
+   Thanks to Priss Print Framework
+ http://github.com/mikecrittenden/priss
+***************************************/
+
+/*** BODY ***/
+body {width:100% !important; margin:0 !important; padding:0 !important; line-height: 1.4; word-spacing:1.1pt; letter-spacing:0.2pt; font-family: Garamond,"Times New Roman", serif; color: #000; background: none; font-size: 14pt;}
+
+/*** HEADINGS ***/
+h1,h2,h3,h4,h5,h6 {font-family: Helvetica, Arial, sans-serif;text-align:center;}
+h1{font-size:25pt;}
+h2{font-size:17pt;}
+h3{font-size:15pt;}
+h4,h5,h6{font-size:12pt;}
+
+/*** ELEMENTS ***/
+code {font: 10px monospace;}
+blockquote {margin: 1.3em; padding: 1em; font-size: 10pt;}
+hr {background-color: #ccc;}
+
+/*** IMAGES ***/
+img {float: left; margin: 1em 1.5em 1.5em 0;}
+a img {border: none;}
+
+/*** LINKS ***/
+a:link, a:visited {background: transparent; font-weight: 700; text-decoration: underline;color:#333;}
+a:link[href^="http://"]:after, a[href^="http://"]:visited:after {content: " (" attr(href) ") "; font-size: 90%;}
+a[href^="http://"] {color:#000;}
+
+/*** TABLES ***/
+table {  text-align:left;font-size: 12pt;}
+th {border-bottom: 1px solid #333;  font-weight: bold;}
+tr{height:50px;}
+td {border-bottom: 1px solid #333; font-size: 1.2em;}
+th,td {padding: 4px 10px 4px 0;}
+tfoot {font-style: italic;}
+caption {background: #fff; margin-bottom:2em; text-align:left;}
+thead {display: table-header-group;}
+tr {page-break-inside: avoid;}
+
+/*** Add sections here to hide various parts of the site when printing ***/
+#header, #footer, #navigation, #sidebar, button {display:none;}
+
+br {mso-data-placement:same-cell;} 
+ .STYLE1 {
+	color: #999999;
+	font-weight: bold;
+}
+ </style>
+ <div id="Classeur1_16681" align=center x:publishsource="Excel">
+ <table x:str border=0 cellpadding=0 cellspacing=0 width=100% style="border-collapse: collapse" width="750" border=1  align="center"    bgcolor="#CCCCCC">
+  <tr>
+    <td colspan="4" bgcolor="#FFFFFF"><h1><strong>方达报关委托单</h1>
+    </div></td>
+  </tr>
+  <tr>
+    <td width="120" bgcolor="#FFFFFF">To:</td>
+    <td width="120" bgcolor="#FFFFFF">&nbsp;$rs['pc_company']</td>
+    <td width="150" bgcolor="#FFFFFF">Fm:</td>
+    <td width="164" bgcolor="#FFFFFF">&nbsp;{$rs['username']} &nbsp;&nbsp;$rs['tel']</td>
+   </tr>
+  <tr>
+    <td colspan="4" bgcolor="#FFFFFF" ><p align=center class="STYLE1">请按下资料安排报关，谢谢~</p></td>
+  </tr>
+  <tr>
+    <td bgcolor="#FFFFFF">Date:</td>
+    <td bgcolor="#FFFFFF">$rs['postdate']</td>
+    <td bgcolor="#FFFFFF">截放行条时间:</td>
+    <td bgcolor="#FFFFFF">$cc['fxdate']&nbsp;$cc['fxhour'] </td>
+   </tr>
+  <tr>
+    <td bgcolor="#FFFFFF">S/O号：</td>
+    <td bgcolor="#FFFFFF">&nbsp;$rs['b_so']</td>
+    <td bgcolor="#FFFFFF">柜 号：</td>
+    <td bgcolor="#FFFFFF">&nbsp;$rs['b_tank_code']</td>
+   </tr>
+  <tr>
+    <td height="50" bgcolor="#FFFFFF">报关方式：</td>
+    <td bgcolor="#FFFFFF">&nbsp;$cc['bgway']</td>
+    <td bgcolor="#FFFFFF">出口码头：</td>
+    <td bgcolor="#FFFFFF">&nbsp;$rs['pc_port']</td>
+   </tr>
+  <tr>
+    <td bgcolor="#FFFFFF">报关费用：</td>
+    <td bgcolor="#FFFFFF">&nbsp;$cc['money']</td>
+    <td bgcolor="#FFFFFF">货物品名：</td>
+    <td bgcolor="#FFFFFF">$cc['product']</td>
+   </tr>
+  <tr>
+    <td bgcolor="#FFFFFF">重 量：</td>
+    <td bgcolor="#FFFFFF">$cc['weight']</td>
+    <td bgcolor="#FFFFFF">件 数：</td>
+    <td bgcolor="#FFFFFF">$cc['num']</td>
+   </tr>
+  <tr>
+    <td bgcolor="#FFFFFF">交单地址：</td>
+    <td colspan="3" bgcolor="#FFFFFF">$cc['address']&nbsp;</td>
+   </tr>
+  <tr>
+    <td bgcolor="#FFFFFF">备 注：</td>
+    <td colspan="3" bgcolor="#FFFFFF">&nbsp;$cc['remark']</td>
+   </tr>
+  <tr>
+    <td height="300" bgcolor="#FFFFFF">货物清单</td>
+    <td colspan=3 bgcolor="#FFFFFF">&nbsp;$cc['productlist']</td>
+   </tr>
+</table>
+ 
+ 

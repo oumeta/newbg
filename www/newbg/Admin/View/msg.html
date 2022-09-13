@@ -1,0 +1,92 @@
+ 
+ 
+<style type="text/css">
+<!--
+.TD_1 {
+	border: 1px solid #cccccc;
+	background-image: url({APPPUBLIC}Images/404/404_Bg.png);
+	background-repeat: repeat-x;
+	height: 288px;
+}
+.Line {
+	background-image: url({APPPUBLIC}Images/404/Line_Bg.gif);
+	background-repeat: repeat-x;
+	background-position: bottom;
+	height: 100px;
+}
+.title {
+	background-image: url({APPPUBLIC}Images/Member/Laugh.gif);
+	background-repeat: no-repeat;
+	background-position: left;
+	height: 100px;
+	width: 100%;
+	padding-left: 110px;
+	line-height: 100px;
+	font-family: "Î¢ÈíÑÅºÚ";
+	font-size: 16px;
+	font-weight: bold;
+	color: #F00;
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: #ddd;
+}
+.txt {
+	font-size: 14px;
+	color: #333;
+	line-height: 22px;
+	padding-left: 110px;
+	padding-top: 10px;
+	font-family: "Î¢ÈíÑÅºÚ";
+}
+-->
+</style>
+
+<!--{if empty($_REQUEST['is_ajax'])}-->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" height="100%">
+  <tr>
+    <td><table width="920" border="0" align="center" cellpadding="0" cellspacing="5" bgcolor="#dddddd">
+      <tr>
+        <td valign="top" class="TD_1"><table width="550" border="0" align="center" cellpadding="0" cellspacing="0">
+          <tr>
+            <td class="title">{lang message_title}:</td>
+          </tr>
+          <tr>
+            <td height="93" valign="top" class="txt"> 
+			<p>{$message['content']}</p>
+			<!--{if $message['url_info']}-->
+				   <!--{loop $message['url_info'] $key $val}-->	
+				   <!--{if $auto_redirect}-->
+				   <script type="text/javascript">
+				   setTimeout(function(){
+				   window.location.href='{$val}';
+				   },2000)
+				   
+				   </script>
+				   <!--{else}-->
+				  <p><a href="{$val}">{$key}</a></p>
+				  <!--{/if}-->
+				  <!--{/loop}-->
+				<!--{/if}-->
+				 
+			</td>
+          </tr>
+          <tr>
+            <td height="54" align="right" valign="top"><img src="{APPPUBLIC}Images/404/logo.gif"></td>
+          </tr>
+          </table></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>	 
+<!--{else}-->
+	$message
+<!--{/if}-->
+{template footer}
+<script type="text/javascript">
+<!--
+	setTimeout(function(){
+	window.location.href='{$url}'
+	
+	},1000)
+//-->
+</script>

@@ -1,0 +1,66 @@
+*{padding:0; margin:0;}
+body{ background:#FFF url(../images/bodybg.gif?version=1.26.18) repeat-x left top;font-size:12px;font-family:Arial,Tahoma,Georgia,Verdana,Simsun,Helvetica,"Microsoft YaHei",Mingliu;line-height: 22px;}
+#box{width:100%; background:url(../images/boxbg.jpg) no-repeat left top; height:288px;}
+.wrap{ width:952px; margin:0 auto}
+.hd{width:100%; float:left; margin-top:40px; height:75px; background:url(../images/hdbg.png) no-repeat;}
+.logo{width:210px; float:left; height:75px; cursor:pointer;}
+.logo span{ display:none;}
+.db{width:626px; float:left; clear: both; margin-top:5px;}
+.lbg,.rbg,.loginlbg,.loginrbg,.ftlbg,.ftrbg,.inputbg,.selectbg,.loginbtn,.regbtn{ background-image:url(../images/indexbg.PNG);}
+.lbg{width:13px; float:left; height:283px; background-position: left top;}
+.cbg{width:600px; float:left; height:284px; background:#FFF url(../images/adbg.gif) repeat-x left bottom; overflow:hidden; position:relative}
+.rbg{width:13px; float:left; height:283px; background-position:-13px top;}
+.login{float:right; width:320px; margin-top:5px;}
+.loginlbg{width:10px; float:left; height:283px; background-position:-30px top;}
+.logincbg{width:300px; float:left; height:283px; background:url(../images/loginbg.gif) left top;}
+.logincbg h1{width:100%; float:left; font-weight:bold; font-size:14px; padding-top:15px;text-indent:15px;}
+.loginrbg{width:10px; float:left; height:283px; background-position:-40px top;}
+.ad{width:100%; float:left; clear:left; padding-top:10px;}
+.news,.hot{width:280px; float:left; margin-left:13px !important; _margin-left:7px;}
+.news h1,.hot h1{width:100%; float:left; height:30px; line-height:30px; text-align:right; border-bottom:1px solid #BCBCBC; position: relative;}
+.news h1 img,.hot h1 img{margin-top:8px; cursor:pointer;}
+*html .news h1 img,*html .hot h1 img{margin-top:14px;}
+*+html .news h1 img,*+html .hot h1 img{margin-top:14px;}
+.news{margin-right:25px}
+.news h1 span,.hot h1 span{ position:absolute; left:0px; bottom:-1px; border-bottom:2px solid #6CB1D7;  height:28px; width:65px; display:block; font-weight:bold; font-size:14px;}
+.adpic{width:320px; float:right;height:121px;}
+.ft{width:100%; float:left; margin-top:5px;}
+.ftlbg{width:10px; float:left; background-position:-57px -56px; height:37px;}
+.ftcbg{width:932px; float:left; height:37px; line-height:37px; background:url(../images/copyrightbg.jpg) repeat-x left top;}
+.ftrbg{width:10px; float:left; background-position:-67px -56px; height:37px;}
+.ftcbg ul{ margin:0 auto; list-style:none; display:inline;}
+.ftcbg li{ float:left; color:#666;}
+.ftcbg li img{margin-top:9px;}
+*html .ftcbg li img{margin-top:9px;}
+*+html .ftcbg li img{margin-top:0px;}
+.ftcbg li a{color:#666; padding:0 6px; text-decoration:none; overflow:hidden;}
+.ftcbg li a:hover{text-decoration: underline; color:#06c}
+.input,.btn{ display:inline-block;width:100%; font-size:14px;}
+input[type="text"]:focus, input[type="password"]:focus, textarea:focus {outline: 0px solid #FFF !important;-webkit-box-shadow:0px 0px 5px #FFF !important;} 
+input[type="checkbox"]:focus,input[type="submit"]:focus,input[type="reset"]:focus, input[type="radio"]:focus {outline: 0px solid #FFF !important;} 
+.input input{width:190px; color:#000;  padding-bottom:8px; padding-right:8px; padding-top:7px!important;_padding-top:5px; margin-left:8px; border:none; background:none;}
+.pwtip,.usertip{position:absolute;left:74px; width:195px; text-indent:0; font-size:13px; color:#999; z-index:1000; font-style:normal;height:15px; line-height:15px; top:9px;}
+.input{text-indent:25px; line-height:32px; height:32px; position:relative;}
+.tip{ display:inline-block;color:#c00; width:100%; text-indent:65px;}
+.btn{ text-indent:65px; margin-top:12px;}
+.inputbg{overflow:hidden; vertical-align:middle;display: inline-block;font-style:normal; width:206px; height:28px; padding:0; margin:0; text-indent:0; line-height:0;background-position:-57px top;}
+.selectbg{background-position:-57px -28px;}
+.loginbtn{width:71px; height:30px; border:0; cursor:pointer; background-position:-57px -99px; vertical-align:middle;}
+.regbtn{width:94px; height:30px; border:0; cursor:pointer; background-position:-57px -136px; vertical-align:middle; margin-left:10px;}
+.btn a,.regdisk a{ text-decoration:none; color:#1A85E0; padding-left:15px; font-size:12px;}
+.btn a:hover,.regdisk a:hover{text-decoration: underline;}
+.linebg{ float:left; width:100%; background:url(../images/loginlinebg.png) no-repeat center center; margin-top:10px; margin-bottom:5px;}
+.regdisk{ display:block; line-height:32px;text-align:center; color:#444; width:100%;}
+
+.cbg ul{ float:left; list-style:none; height:273px; margin-top:10px;}
+.cbg a:link,.cbg a:visited{text-decoration:none;}
+.cbg img{border:0;}
+#banner_bg {position:absolute; bottom:15px;background-color:#000;height:30px;filter: Alpha(Opacity=30);opacity:0.3;z-index:1000;cursor:default; width:602px; }
+
+#DbankMarquee ul {position:absolute;list-style-type:none;filter: Alpha(Opacity=75);opacity:0.75;z-index:1002;margin:0; padding:0;bottom:18px; right:0;height:21px;}
+#DbankMarquee ul li { padding:0px 5px;float:left;display:block;color:#FFF; margin-right:5px !important;_ margin-right:3px;background-color:#000;cursor:pointer}
+#DbankMarquee ul li.on{ background:#FFF url(../images/nblistbg.gif) repeat-x left bottom; color:#000;}
+#banner_info{position:absolute; bottom:15px; left:5px; line-height:30px;color:#fff;z-index:1001;}
+.default_cursor{cursor:default;}
+.ftcbg .joinus{width:80px; background:url(http://st2.dbank.com/images/newico.gif) no-repeat right center; margin-right:30px;}
+#banner_list a{position:absolute;} 

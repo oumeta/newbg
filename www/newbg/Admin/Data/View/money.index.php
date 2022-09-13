@@ -1,0 +1,155 @@
+<? if(!defined('IN_GENV')) exit('Access Denied');?>
+<? include $this->gettpl('pagegrid');?>
+<style type="text/css">
+	.date_input{width:100px;}
+</style>
+<div id="aiqibar" style="display:none;position:absolute;z-ingdex:2020">
+   <ul>
+
+   </ul>
+</div>
+
+<div id='topbar' class="datetitle ">
+	<ul  style="">
+		<li  class="bt_s4"><a title="添加"  href="javascript:void(0)" onclick=gridadd("<? echo U('add')?>")>添加</a></li>
+		<li  class="bt_s4"><a title="删除"  href="javascript:void(0);" id='deleteselect'>删除</a></li>
+		<li  class="bt_s4"><a title="查询"  href="javascript:void(0);" onclick='gridsearch(0);'>查询</a></li>
+
+	 </ul>
+
+</div>
+
+<div id='searchbar' class="searchbar none">
+<div id=divsearch  >
+<form   class="gridform" target='DataGrid' id="myform" onsubmit='return false;'>
+  <ul>
+      <li>
+		<select id=cate name=cate>
+		  <option value='-1'>全部</option>
+
+		  <option value='0'>收款</option>
+		  <option value='1'>付款</option>
+		  <option value='2'>回扣</option>
+
+		 </select>
+		</li>
+	   <li>
+
+	    <select id=bankid name=bankid>
+		  <option value=''>全部</option>
+		  <? foreach((array)$banklist as $k => $v) {?>
+		  <option value='<?=$k?>'><?=$v?></option>
+		  <?}?>
+		 </select>
+      </li>
+	   <li>开始日期:<input name="d1" type="text" id="d1" class="date_input" value="<?=$d1?>" /></li>
+	<li>结束日期:<input name="d2" type="text" id="d2" class="date_input" value="<?=$d2?>" /></li>
+
+   <li> 年份：<select name=d3 id=d3>
+	<option value="0">请选择年</option>
+	<? for($i=2008;$i<2050;$i++){?>
+		<option value="<?=$i?>" <? if($d3==$i) { ?>selected<? } ?>><?=$i?></option>
+     <?}?>
+	 </select></li>
+	<li>月份:<select name=d4 id=d4>
+	<option value="0">请选择月</option>
+	<? for($i=1;$i<=12;$i++){?>
+		<option value="<?=$i?>" <? if($d4==$i) { ?>selected<? } ?>><?=$i?></option>
+     <?}?>
+	 </select> </li>
+	 <li>
+			<select name=comcate id=comcate onChange=searchAct(this.options[this.selectedIndex].value)>
+						<option value=''></option>
+						 <option value=0>客户</option>
+						 <option value=1>报关</option>
+						 <option value=2>托车</option>
+						 <option value=4>核销单</option>
+
+
+
+					</select>
+	 </li>
+    <li style='width:320px'>
+			 公司&客户:<span id='com_div' ></span>
+	 </li>
+
+
+	  <li><input type=submit class=bt_s2 id=gsearch value='查询' />&nbsp;<input type=reset class=bt_s2 id=gsearchrest value='取消查询' />
+	  <!--input type=hidden id=rsnum onchange=Rsnum()--></li>
+ </ul>
+</form>
+</div>
+<div id='b_opeiddiv' class=" none ">
+
+</div>
+</div>
+
+<div id="myGrid" style='width:100%;height:500px;'></div>
+
+<div id="DataGrid" class=DataGrid style='align:left;display:none' url='<?=$datasrc?>'>
+		    <ul>
+			    <li title='id' id='id' width="50"  ></li>
+				<li title='类别' id='cate' width="40"  formatter="cateFormatter" ></li>
+				<li title='银行' id='bankname' width="180" ></li>
+				<li title='公司' id='comname' width="120" ></li>
+				<li title='金额' id='money' width="50" ></li>
+				<li title='日期' id='postdate' width="80" ></li>
+				<li title='年份' id='fyear' width="40" ></li>
+				<li title='月份' id='fmonth' width="40" ></li>
+				<li title='备注' id='remark' width="450" ></li>
+
+			</ul>
+			<textarea class="griddata" width=200><?=$listdata?></textarea>
+			<textarea class="gridconfig" >var config={checkboxid:'sid',iscount:true}</textarea>
+</div>
+<div id='div_total'><?=$total?></div>
+<div id=footbar ><div class=lf>显示条数<input type=text maxlength=3 size=3 onchange="Rsnum()" id="rsnum"></div><div class="pagesdiv">&nbsp;</div></div>
+</div>
+ </body>
+</html>
+<script type="text/javascript">
+<!--
+
+
+function searchAct(a){
+   var url=''
+   if(a==0){
+	 url="<? echo U('api/getcustomerlist')?>"
+	 var cc='j_company'
+   }else{
+     url="<? echo U('api/getcompanylist')?>"+"&cate="+a
+	 var cc='name'
+   }
+   $("#com_div").html('')
+	var oo=$('#com_div').flexbox(url,{
+			 displayValue:cc,
+			 hiddenValue:'id',
+			  showArrow: true,
+
+			 
+			 resultTemplate: '{'+cc+'}',
+			 
+			 watermark: '请选择',
+			 width: 220
+	 });
+}
+
+function cateFormatter(row, cell, value, columnDef, dataContext) {
+
+            if (value ==0)
+                return "<span class='load-hi1'>收款</span>";
+            else if (value==1)
+                return "<span class='load-medium'>付款</span>";
+			else if(value==2)
+			    return "<span class='load-medium'>回扣</span>"
+
+}
+
+
+ $(function(){
+
+})
+
+//-->
+</script>
+<? include $this->gettpl('page_foot');?>

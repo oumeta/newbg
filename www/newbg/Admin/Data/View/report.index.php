@@ -1,0 +1,31 @@
+<? if(!defined('IN_GENV')) exit('Access Denied');?>
+<? include $this->gettpl('formhead');?>
+<style type="text/css">
+ul.menulist {margin:0;padding:4px 12px 0 12px;list-style:none;}
+ul.menulist li {float:left;height:50px;width:200px;
+	cursor:pointer;white-space:nowrap ;
+	border:1px solid gray;
+	color: #d00;
+	font-size: 20px;
+	font-weight: 700;
+	font-family: "微软雅黑","黑体";
+	margin:5px;
+	padding-top:15px;
+
+}
+ 
+</style>
+<script type="text/javascript">
+<!--
+	function aiqi(url){
+	  window.open(url)	
+	}
+//-->
+</script>
+<body>
+<ul class='menulist'>
+<? foreach((array)$rmenu as $k => $v) {?>
+<li onclick='aiqi("<?=$v?>")'><?=$k?></li>
+<?}?>
+</ul>
+<? include $this->gettpl('formfoot');?>

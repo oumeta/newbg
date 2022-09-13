@@ -1,0 +1,299 @@
+{template pagegrid}
+ 
+ <div id="aiqibar" style="display:none;position:absolute;z-ingdex:2020">
+   <ul>
+   <li data="lock">锁定</li>
+   <li data="unlock">解锁</li>
+   <li data="finclist">收付款</li>
+   
+   </ul>
+</div>
+<div id='topbar' class="datetitle ">
+	<ul  style="">	 
+		<li  class="bt_s4"><a title="查询"  href="javascript:void(0);" onclick='gridsearch(0);'>查询</a></li>
+		 
+		</ul> 
+</div> 
+
+<div id='searchbar' class="searchbar none">
+<div id=divsearch class=" none  ">
+<form   class="gridform" target='DataGrid' id="myform" onsubmit='return false;'>
+  <ul>
+	  <li>S/O<input type=text name='b_so' class=sbt></li>
+	  <li>品名<input type=text name='b_product_name' class=sbt></li>
+	  <li>柜号<input type=text name='b_tank_code' class=sbt></li>
+	  <li>业务员<span id='bus_div'></span> </li>
+	  <li>操作员<span id='ope_div'></span></li>
+	  <li>客户<span id='cus_div'></span> </li>
+	  <li>下单日期<input type=text name='d1'  class='date_input sbt'   readonly>-
+	  </li><li><input type=text name='d2'class='date_input sbt' readonly></li>
+	  <li>放行日期<input type=text name='d3' class='date_input sbt' readonly>-</li><li><input type=text name='d4' class='date_input sbt' readonly></li>
+	 
+	  <li>状态<select id=status name=status>
+	  <option value=''>全部</option>
+	  {loop $status $k $v}
+	  <option value='$k'>$v</option>
+	  {/loop}
+	  </select>
+	  </li>
+	  <li><input type=submit class=bt_s2 id=gsearch value='查询' />&nbsp;<input type=reset class=bt_s2 id=gsearchrest value='取消查询' />
+	  <!--input type=hidden id=rsnum onchange=Rsnum()--></li>
+ </ul>
+</form>
+</div>
+<div id='b_opeiddiv' class=" none ">
+<form  id="moneyform" onsubmit='return false;'>
+
+日期:<input type="text" size="20" class="input-w2 input-text date_input" name='postdate' id='postdate' readonly  />			
+选择银行:
+<select name=bankid id=bankid>
+	 {loop $bank $key $v}
+	 <option value=$key>$v</option>
+	 {/loop}
+</select>
+金额:<input type="text" size="20" class="input-w2 input-text :required :number" name='money' id='money'   />	
+备注:<input type="text" size="20" class="input-w2 input-text" name='remark' id='remark'   />
+	<input type=submit onclick='batchshu()'  value='保存' />
+</form>
+</div> 
+</div> 
+
+<div id="myGrid" style='width:100%;height:500px;'></div>
+ 
+<div id="DataGrid" class=DataGrid style='align:left;display:none' url='{$datasrc}'>
+<ul>
+	<li title='状态' id='status' width="40" sortable=true formatter="statusFormatter"></li>
+	<li title='业务员' id='busname' width="60" sortable=true></li>
+	<li title='操作员' id='opratename' width="60" sortable=true></li>
+	<li title='客户' id='j_company' width="160" sortable=true></li>
+	<li title='品名' id='b_product_name' width="80" sortable=true></li>
+	<li title='柜号' id='b_tank_code' width="160" sortable=true></li>
+	<li title='单号' id='b_code' width="120" sortable=true></li>
+	<li title='应收' id='count_shu' width="80" sortable=true></li>
+	
+	<li title='应付' id='count_zhi' width="80" sortable=true></li>
+	
+	<li title='利润' id='account' width="100" sortable=true></li>
+	<li title='下单日期' id='postdate' width="100" sortable=true></li>
+	<li title='放行日期' id='finshdate' width="100" sortable=true></li>
+	<li title='最后修改' id='editdate' width="100" sortable=true></li>
+	
+</ul> 
+<textarea class="griddata" width=200>{$listdata}</textarea>
+<textarea class="gridconfig" >var config={checkboxid:'sid',iscount:true}</textarea>
+</div>
+<div id='div_total'>{$total}</div>
+
+<div id=footbar ><div class=lf>显示条数<input type=text maxlength=3 size=3 onchange="Rsnum()" id="rsnum"></div><div class="pagesdiv">&nbsp;</div></div>
+</div>
+
+ </body>
+</html>
+<script type="text/javascript">
+<!--
+function $1(s){return document.getElementById(s);}
+
+var a=[false,false];
+function gridsearch(bb){
+    if(!a[bb]){
+		if(bb==0){	
+		  $('#divsearch').show();
+		  $('#b_opeiddiv').hide();
+		}
+		if(bb==1){	
+		  $('#divsearch').hide();
+		  $('#b_opeiddiv').show();
+		   
+		  PageGo();
+		}   
+	}
+	if(!a[bb]){
+		$("#searchbar").show(function(){   
+			  
+			  AppPage.H=AppPage.H+$("#searchbar").height()
+			  Global.exec("winresize");
+		});
+	
+	}
+	if(a[bb]){
+	 
+		$("#searchbar").hide(function(){       
+			   AppPage.H=AppPage.H-$("#searchbar").height()	
+			  Global.exec("winresize");
+		});
+	
+	}
+	a[bb]=!a[bb]
+	
+ }
+ 
+ $(function(){     
+	
+	  var url="{eval echo U('api/getsalesmanlist')}"
+	 var oo=$('#bus_div').flexbox(url,{  
+			 displayValue:'username',
+			 hiddenValue:'id',
+			 allowInput: false,
+			 
+			 {literal}
+			 resultTemplate: '{username}',
+			 {/literal}
+			 watermark: '选择业务员',
+			 width: 120,
+			  
+			 onSelect: function() {
+			     
+			     // setoprate();
+						 
+			}					 
+	 });
+	  var url="{eval echo U('api/getoperatelist')}"
+	  var oo=$('#ope_div').flexbox(url,{  
+			 displayValue:'username',
+			 hiddenValue:'id',
+			 allowInput: false,
+			 {literal}
+			 resultTemplate: '{username}',
+			 {/literal}
+			 watermark: '选择操作员',
+			 width: 120,
+			  
+			 onSelect: function() {
+			     
+			      //setoprate();
+						 
+			}					 
+	 });
+	 var url="{eval echo U('api/getcustomerlist')}"
+	  var oo=$('#cus_div').flexbox(url,{  
+			 displayValue:'j_company',
+			 hiddenValue:'id',
+			 showArrow: true,
+			 
+			 //allowInput: false,
+			 {literal}
+			 resultTemplate: '{j_company}',
+			 {/literal}
+			 watermark: '选择客户',
+			 width: 120,
+			  
+			 onSelect: function() {
+			     
+			      //setoprate();
+						 
+			}					 
+	 });
+
+
+	
+$("#aiqibar").click(function(e) {
+		 
+		if (!$(e.target).is("li"))
+			return;
+
+		var row = $(this).data("row");
+		var t=$(e.target).attr("data")
+		if(t=='lock'){
+			changestatus(row,billstatus['lock']);		
+		}else if(t=='unlock'){
+			changestatus(row,billstatus['unlock']);
+		}else if(t=='finclist'){
+			var id=data[row].id;
+			var obj={
+				title:'管理收款记录',
+				url:PI.APP+'/finance/finclist/?billid='+id,
+				width:950,
+				height:500,
+				finshed:function(){
+				$("#aiqibar").hide();
+					PageGo(); 				 
+				}
+			}			 
+			parent.appdialog(obj);			
+		} 		
+		 return false;
+	})
+ 
+
+})
+function gridstop(){
+
+	/*grid.onContextMenu.subscribe(function (e){
+			e.preventDefault();			
+			var cell = grid.getCellFromEvent(e);
+			 
+			$("#aiqibar")
+					.data("row", cell.row)
+					.css("top", e.pageY)
+					.css("left", e.pageX)
+					.show();
+			
+			$("#aiqibar").blur(function(){
+				$("#aiqibar").hide();
+			
+			})
+			$("body").one("click", function() {
+                    $("#aiqibar").hide();
+            });
+			 
+ });*/
+}
+
+ 
+ 
+
+
+//改变状态;
+function changestatus(row,status){ 
+	var id=data[row].id;
+		$("#background").show();
+		$("#progressBar").show();		 
+		$.ajax({ 
+				url: PI.URL+"/apiedit/", 
+				 
+				data: "id="+id+"&status="+status,
+				type:'POST',
+				success: function(e){
+					$("#aiqibar").hide();
+					PageGo();	
+					
+					$("#background").hide();
+					$("#progressBar").hide();	
+				}
+			});
+
+} 
+function batchshu(){ 
+	var b=[];	   
+	  $.each(grid.getSelectedRows(),function(i,n){				 
+		b.push(data[n].id);			 
+	})
+	if(b.length==0){
+	alert('请选择单据');
+	return false;
+	}
+	 var j = $("#moneyform").serialize();//序列化name/value
+	     
+       $.ajax({
+           url: "{eval echo U('batchshu')}",
+           type:'POST',
+           data: 'ids='+b+"&"+j,           
+           success: function(e) { //返回的json数据 
+				 str=$.parseJSON(e);
+				 alert(str.info)
+		         PageGo();
+				 
+           } 
+     })	
+}
+function setall(){
+	 gfilter['status']=''
+	 PageGo();
+	
+}
+//-->
+</script>
+ 
+
+
+  {template page_foot}

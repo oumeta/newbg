@@ -1,0 +1,51 @@
+<? if(!defined('IN_GENV')) exit('Access Denied');?>
+<? include $this->gettpl('pagegrid');?>
+<ul id="contextMenus" style="display:none;position:absolute;z-ingdex:2020">			 
+	<li data="edit">修改</li>
+	<li data="delete">删除</li>
+	<li data="view">查看</li>
+</ul>
+<div id='topbar' class="datetitle">
+	<ul  style="">	 
+		<li  class="bt_s4"><a title="添加"  href="<? echo U('add')?>">添加</a></li>
+		<li  class="bt_s4"><a title="删除"  href="javascript:void(0);" id='deleteselect'>删除</a></li>
+		<li  class="bt_s4"><a title="查询"  href="javascript:void(0);" onclick='gridsearch()'>查询</a></li>
+		 
+	 </ul> 
+</div> 
+<div id='searchbar' class="searchbar none">
+<form   class="gridform" target='DataGrid' id="myform" onsubmit='return false;'>
+客户<input type=text name='customers'>
+抬头<input type=text name='taitou'>
+	 单号<input type=text name='billcode'>
+	 公司<input type=text name='company'>
+	 <input type=submit class=bt_s2 id=gsearch value='查询' />
+</form>
+</div> 
+<div id="myGrid" style='width:100%;height:500px;'></div>
+ 
+<div id="DataGrid" class=DataGrid style='align:left;display:none' url='<?=$datasrc?>'>
+		    <ul>
+			 
+				<li title='客户' id='customers' width="100" sortable=true></li>
+				<li title='核销单抬头' id='taitou' width="100" sortable=true></li>
+				<li title='单号' id='billcode' width="100" sortable=true></li>
+				<li title='报关公司' id='company' width="100" sortable=true></li>
+				<li title='码头' id='matou' width="100" sortable=true></li>
+				<li title='状态' id='status' width="100" sortable=true></li>
+				<li title='备注' id='remark' width="100" sortable=true></li>
+				<li title='添加时间' id='add_data' width="100" sortable=true></li>
+				<li title='跟单人' id='gdr' width="100" sortable=true></li>
+				<li title='签收人' id='qsr' width="100" sortable=true></li>
+				 
+			</ul> 
+			<textarea class="griddata" width=200><?=$listdata?></textarea>
+			<textarea class="gridconfig" >var config={checkboxid:'sid',iscount:true}</textarea>
+</div>
+<div id=footbar ><div class=lf>显示条数<input type=text maxlength=3 size=3 onchange="Rsnum()" id="rsnum"></div><div class="pagesdiv">&nbsp;</div></div>
+</div>
+ </body>
+</html>
+ 
+				
+							 

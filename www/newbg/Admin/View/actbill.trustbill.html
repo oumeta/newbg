@@ -1,0 +1,125 @@
+
+<link rel="stylesheet" href="{$_public}newcss/date_input.css" type="text/css" 　 />
+
+　
+<script src="{$_public}newjs/jquery.js" type="text/javascript"></script>
+<script src="{$_public}newjs/jquery.date_input.js" type="text/javascript"></script>
+<script src="{$_public}newjs/jquery.flexbox.js" type="text/javascript"></script>
+<script src="{$_public}newjs/checkform.js" type="text/javascript"></script>
+<script language="JavaScript" src="{$_public}script/genv.js"></script>
+<script language="JavaScript" src="{$_public}script/genv.gui.js"></script>
+<SCRIPT LANGUAGE="JavaScript">
+ <!--
+   
+	{$pageinfo}	
+//-->
+ </SCRIPT>
+ <center class="Noprint" >
+	 
+	<input type=button value="导出execl" onclick='goprint()' >
+	 
+</center>
+<div class="container  ">
+<form id="form" action="{eval echo U('save')}" method=post>
+
+ <table width="907" border="0" align="center" cellpadding="1" cellspacing="1" bgcolor="#CCCCCC">
+  <tr>
+    <td colspan="6" bgcolor="#FFFFFF"><div align="center"><strong>方达报关委托单</strong></div></td>
+  </tr>
+  <tr>
+    <td width="94" bgcolor="#FFFFFF">To:</td>
+    <td width="168" bgcolor="#FFFFFF">&nbsp;$rs['pc_company']</td>
+    <td width="111" bgcolor="#FFFFFF">Fm:</td>
+    <td width="225" bgcolor="#FFFFFF">{$rs['username']} &nbsp;&nbsp;$rs['tel']</td>
+    <td width="120" bgcolor="#FFFFFF">Date:</td>
+    <td width="170" bgcolor="#FFFFFF">&nbsp;$rs['postdate']</td>
+  </tr>
+  <tr>
+    <td colspan="6" bgcolor="#FFFFFF" ><p align=center>请按下资料安排报关，谢谢~</p></td>
+  </tr>
+  <tr>
+    <td bgcolor="#FFFFFF">S/O号：</td>
+    <td bgcolor="#FFFFFF">&nbsp;$rs['b_so']</td>
+    <td bgcolor="#FFFFFF">柜 号：</td>
+    <td bgcolor="#FFFFFF">&nbsp;$rs['b_tank_code']</td>
+    <td bgcolor="#FFFFFF">出口码头：</td>
+    <td bgcolor="#FFFFFF">&nbsp;$rs['pc_port']</td>
+  </tr>
+  <tr>
+    <td height="50" bgcolor="#FFFFFF">报关方式：</td>
+    <td bgcolor="#FFFFFF"><input name="bgway" type="text" id="bgway"   value="$cc['bgway']" /></td>
+    <td bgcolor="#FFFFFF">截放行条时间:</td>
+    <td bgcolor="#FFFFFF"><input name="fxdate" type="text" id="fxdate" readonly style='width:100px' class="date_input"  value="$cc['fxdate']" /><input type='text' name='fxhour' style='width:20px' value="$cc['fxhour']" maxlength=2></td>
+    <td bgcolor="#FFFFFF">交单地址：</td>
+    <td bgcolor="#FFFFFF"><input name="address" type="text" id="address"   value="$cc['address']" /></td>
+  </tr>
+  <tr>
+    <td bgcolor="#FFFFFF">报关费用：</td>
+    <td bgcolor="#FFFFFF">&nbsp;
+      <input name="money" type="text" id="money"   value="$cc['money']" /></td>
+    <td bgcolor="#FFFFFF">货物品名：</td>
+    <td bgcolor="#FFFFFF"><input name="product" type="text" id="product"   value="$cc['product']" /></td>
+    <td bgcolor="#FFFFFF">件 数： </td>
+    <td bgcolor="#FFFFFF"><input name="num" type="text" id="num"   value="$cc['num']" /></td>
+  </tr>
+  <tr>
+    <td bgcolor="#FFFFFF">重 量：</td>
+    <td colspan="5" bgcolor="#FFFFFF">&nbsp;
+      <input name="weight" type="text" id="weight"   value="$cc['weight']" /></td>
+    </tr>
+  <tr>
+    <td bgcolor="#FFFFFF">备 注：</td>
+    <td colspan="5" bgcolor="#FFFFFF">&nbsp;
+      <textarea   name="remark" rows="2"   id="remark">$cc['remark']</textarea></td>
+    </tr>
+  <tr>
+    <td bgcolor="#FFFFFF">货物清单</td>
+    <td colspan=5 bgcolor="#FFFFFF">&nbsp;
+	<textarea     cols="100" rows="8"  name='productlist' id="productlist">$cc['productlist']</textarea></td>
+    </tr>
+  <tr>
+    <td colspan=6 bgcolor="#FFFFFF">
+    <input name="bid" type="hidden" id="bid"   value="$rs['id']" />
+	<input name="id" type="hidden" id="id"   value="$cc['id']" />
+		<button class="submit button positive" id='btsave' >
+        <img src="{$_public}images/tick.png" alt=""/> 保存      </button>	</td>
+  </tr>
+</table>
+</form>
+</div>
+
+<script type="text/javascript">
+<!--
+	VanadiumForm.prototype.success=function(){
+
+     
+	 var j = $("#form").serializeArray();//序列化name/value
+		 
+	 $.ajax({
+           url: "{eval echo U('savetrustbill')}",           
+		   type:'POST',
+           data: j,           
+           success: function(e) { //返回的json数据
+			 
+
+			 str=$.parseJSON(e);	
+			 if(str.status==1){
+				 parent.aiqi(3);
+			 }else{
+			 alert(str.info)
+			 
+			 }
+           } 
+     })
+
+	  
+	return false;
+				
+}
+function goprint(){
+window.open(PI.ROOT+"/excel.php?id={$rs['id']}","","")
+}
+
+//-->
+</script>
+{template formfoot}

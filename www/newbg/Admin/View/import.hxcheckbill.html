@@ -1,0 +1,40 @@
+ 
+
+ <table   border=1>
+ <caption>$company(供应商) </caption>
+ <tr> <th style='width:60px;'>序号</th>
+		    <th style='width:60px;'>ID</th>
+			<th style='width:60px;'>单号</th> 
+			<th style='width:360px;'>柜号</th> 
+			<th style='width:60px;'>S/O</th> 
+			<th style='width:60px;'>品名</th> 
+			<th style='width:60px;'>单证费</th> 			 
+		    <th style='width:60px;'>日期</th> 
+		  
+</tr>
+ {loop $list $key $v}
+ 
+	     
+		<tr><td>&nbsp;$key</td>
+		<td>&nbsp;$v['id']</td>
+		<td>&nbsp;$v['b_code']</td>	
+		<td>&nbsp;$v['b_tank_code']</td>
+		
+		<td>&nbsp;$v['b_product_name']</td>
+
+		<td>&nbsp;$v['b_so']</td>	
+		<td>&nbsp;$v['pb_dzf']</td>
+		 
+		<td>&nbsp;$v['postdate']</td>	
+		</tr> 
+ {/loop}
+ <tr><td> 合计</td>
+		 <td>&nbsp;</td><td>&nbsp;</td>	<td>&nbsp;</td>	<td>&nbsp;</td><td>&nbsp;</td>
+		 
+		<td>$countdata['pb_dzf']</td>
+		<td>&nbsp;</td>	
+		</tr> 
+ </table>  
+
+   
+  

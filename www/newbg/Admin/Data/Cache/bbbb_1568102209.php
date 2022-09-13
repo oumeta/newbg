@@ -1,0 +1,5 @@
+<?php
+!defined('IN_GENV') && die();
+//-00000000001
+return 'a:8:{s:9:\"countdata\";a:0:{}s:4:\"list\";b:0;s:2:\"d3\";s:0:\"\";s:2:\"d4\";s:0:\"\";s:3:\"kid\";s:0:\"\";s:8:\"banklist\";a:2:{i:0;a:5:{s:2:\"id\";s:1:\"6\";s:8:\"bankname\";s:27:\"深圳招行文锦渡支行\";s:8:\"bankcode\";s:16:\"6225886555388204\";s:12:\"bankcustomer\";s:9:\"詹朝暖\";s:4:\"text\";s:0:\"\";}i:1;a:5:{s:2:\"id\";s:2:\"31\";s:8:\"bankname\";s:30:\"深圳农行锦湖支行卡号\";s:8:\"bankcode\";s:19:\"6228450128005775775\";s:12:\"bankcustomer\";s:9:\"詹朝暖\";s:4:\"text\";s:0:\"\";}}s:7:\"company\";N;s:9:\"mycompany\";a:10:{s:6:\"j_name\";s:45:\"深圳市科迪报关有限公司广州公司\";s:9:\"j_address\";s:0:\"\";s:5:\"j_tel\";s:11:\"18928937089\";s:5:\"j_fax\";s:0:\"\";s:8:\"j_linker\";s:9:\"刘小姐\";s:6:\"j_mail\";s:0:\"\";s:6:\"j_bank\";s:0:\"\";s:8:\"bill_pre\";s:4:\"GDKD\";s:8:\"timezone\";s:1:\"8\";s:15:\"currency_format\";s:8:\"￥%s元\";}}';
+?>

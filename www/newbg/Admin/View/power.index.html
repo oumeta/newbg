@@ -1,0 +1,50 @@
+ {template pageform}
+ <style type="text/css">
+	.left1{
+	text-align:left;
+	padding-left:10px;
+	
+	}
+ </style>
+ 
+ 
+<body>
+ 
+<form action="{eval echo U('save')}" method="post" id=powerform name=powerform>
+<table border=1 width=100%>  
+  <tr bgcolor=#ecf2fa><td colspan=3></td><td class='left1'><input type="checkbox" name="selAll" id="selAll"  class="checkbox" >选择全部</td></tr>
+
+ 
+  {loop $menulist  $key $vm}
+  <tr bgcolor=#ecf2fa><td colspan=3><img src={$_public}images/next.gif>{$vm['name']}</td><td></td></tr>
+  {loop $vm['submenu']  $k $sub}  
+   <tr  bgcolor=#F4FAFB><td> </td><td colspan=2><img src={$_public}images/ico_3.gif>{$sub['name']}</td><td></td></tr> 	   
+	    {loop $sub['actlist']  $m $act}
+		 
+	   <tr><td width=30> </td><td width=30> </td> <td width=150><img src={$_public}images/ico_2.gif>{$act['title']}</td><td class=left1><input type="checkbox" name="keyid[]" id="keyid[]" value="{$vm['id']}_{$sub['id']}_{$act['md5key']}" class="checkbox1" {if $act['checked']==1}checked{/if}></td></tr>	   
+	{/loop}
+   {/loop}
+{/loop}
+</table>
+ <input name="roleid" type="hidden" id="roleid"  value="{$roleid}">
+ <input type="submit" value="保存权限 "  class="button">
+</form> 
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+//thePage.flashshow();
+
+$(document).ready(function(){
+	 
+	// thePage.flashhide();
+	
+})
+ $("#selAll").click(			
+		 function(){
+		    var This=this;
+			$("input[id='keyid[]']").each(function(){
+					 $(this).attr("checked",$(This).attr("checked")) 					 
+					})
+		})
+
+//-->
+</SCRIPT>

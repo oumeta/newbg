@@ -1,0 +1,468 @@
+{template formhead}
+<div class="container  ">
+<form id="form" action="{eval echo U('save')}" method=post>
+
+
+<fieldset>
+	<legend>订单信息及应收</legend>
+	<div>
+	  <div class="span-7 colborder">
+		<div>
+			<label for="f1">自编号:</label><br />
+			<input name="b_code" type="text" id="b_code"   value="$rs['b_code']" />
+		</div>
+        <div>
+			<label for="pw">下单日期:</label><br />
+			<input name="postdate" type="text" id="postdate" readonly class="date_input" value="$rs['postdate']" />
+		</div>  
+		<div>
+			<label for="pw">放行日期:</label><br />
+			<input name="finshdate" type="text" id="finshdate" class="date_input" value="$rs['finshdate']" />
+		</div>  
+		<div>
+			<label for="f5">S/O或报关单号:</label><br />
+			<input type="text"   name='b_so' id='b_so' class=""  value="$rs['b_so']" />
+		</div>
+		<div>
+			<label for="f5">柜号或申报美金数:</label><br />
+			<input type="text"   name='b_tank_code' id='b_tank_code' class=""  value="$rs['b_tank_code']" />
+			 </div>
+		<div>
+			<label for="f1">品名或抬头:</label><br />
+			<input type="text"   name='b_product_name' id='b_product_name' class=""  value="$rs['b_product_name']" />
+		</div>
+		<div>
+			<label for="pw">口岸:</label><br />
+			<input type="text"   name='pc_port' id='pc_port'  value="$rs['pc_port']" />
+		</div>
+		<div>
+			<label for="pw">柜数（个）:</label><br />
+			<input type="text"   name='b_tank_num' id='b_tank_num' class=":digits" value="$rs['b_tank_num']" />
+		</div>
+		 
+
+	  </div>
+	
+	  <div class="span-7 colborder"> 
+	  <div>
+			<label for="f1">业务员:</label><br />
+			 
+			<div id="b_busid"></div>
+			 
+		</div>
+        <div>
+			<label for="pw">客  户:</label><br />
+			<div id="k_id"></div>
+		</div> 
+		<div>
+			<label for="pw">联系人:</label><br />
+			<div id="k_linker"></div>
+			 
+		</div>
+		<div>
+			<label for="f5">备注:</label><br />
+			<textarea   name="cz_remark"   id="cz_remark">$rs['cz_remark']</textarea>
+		</div>		
+ 	 </div>
+
+	    <div class="span-7 last">
+		<div>
+	 
+			<label for="f1">报关费：</label><br />
+			<input type="text" name='b_bgf' id='b_bgf'  class=":number"  value="$rs['b_bgf']" />
+		</div>        
+		<div>
+			<label for="pw">港建费：</label><br />
+			<input type="text"  name='b_gjf' id='b_gjf' class=":number"  value="$rs['b_gjf']" />
+		</div>
+		<div>
+			<label for="pw">单证费：</label><br />
+			<input type="text"   name='b_dzf' id='b_dzf' class=":number" value="$rs['b_dzf']" />
+		</div>
+		<div>
+			<label for="pw">码头费：</label><br />
+			<input type="text"   name='b_sxf' id='b_sxf' class=":number" value="$rs['b_sxf']" />
+		</div>
+		 
+		<div>
+			<label for="pw">互认费/卫检费:</label><br />
+			<input type="text"   name='b_cgf' id='b_cgf' class=":number"  value="$rs['b_cgf']" />
+		</div>
+		<div>
+			<label for="pw">托车费:</label><br />
+			<input type="text"   name='br_money' id='br_money'  class=":number" value="$rs['br_money']" />
+		</div>
+		<div>
+			<label for="pw">其它费：</label><br />
+			<input type="text"   name='b_qtf' id='b_qtf'  class=":number" value="$rs['b_qtf']" />
+		</div>
+		<div>
+			<label for="pw">回扣：</label><br />
+			<input type="text"   name='rebate' id='rebate' class=":number" value="$rs['rebate']" />
+		</div>
+ 	 </div>
+ </fieldset>
+ <fieldset>
+	<legend>应付费用</legend>
+
+
+	<div>
+	  <div class="span-7 colborder">
+	    <div>
+				<label for="f5">供应商:</label><br />
+				<div id="pb_proid"></div>				 
+			</div>
+		<div>
+			<label for="f1">经营单位:</label><br />
+			<input type="text"   name='pb_jydw' id='pb_jydw'  value="$rs['pb_jydw']" />
+		</div>
+        <div>
+			<label for="pw">核销单号:</label><br />
+			<input type="text"   name='pb_cheno' id='pb_cheno'  value="$rs['pb_cheno']" />
+		</div>  
+		 
+		<div>
+			<label for="f5">申报金额USD:</label><br />
+			<input type="text"   name='pb_usd' id='pb_usd'  value="$rs['pb_usd']" />
+		</div>
+		<div>
+				<label for="f5">单证费:</label><br />
+				<input type="text"   name='pb_dzf' id='pb_dzf' class=":number" value="$rs['pb_dzf']" />
+		</div> 
+
+	  </div>
+	
+	  <div class="span-7 colborder"> 
+		 <div>
+			<label for="pw">供应商:</label><br />
+			<span id="pc_id"></span>
+		</div> 
+		<div>
+			<label for="f1">报关费:</label><br />
+			<input type="text"   name='pc_bgmoney' id='pc_bgmoney' class=":number"  value="$rs['pc_bgmoney']" />
+		</div>
+       
+		<div>
+			<label for="pw">港建费:</label><br />
+			<input type="text"   name='pc_portmoney' class=":number" id='pc_portmoney'  value="$rs['pc_portmoney']" />
+		</div>
+		
+		<div>
+			<label for="pw">互认费/卫检费
+:</label><br />
+			<input type="text" class=":number"  name='pc_tankmoney' id='pc_tankmoney'  value="$rs['pc_tankmoney']" />
+		</div>
+		<div>
+			<label for="pw">其它费:</label><br />
+			<input type="text" class=":number"  name='pc_other' id='pc_other'  value="$rs['pc_other']" />
+		</div>
+		
+ 	 </div>
+	    <div class="span-7 last">
+		<div>
+			<label for="pw">供应商:</label><br />
+			<span id="pc_id2"></span>
+		</div> 
+		 <div>
+			<label for="f1">报关费:</label><br />
+			<input type="text" class=":number"  name='pc_bgmoney2' id='pc_bgmoney2'  value="$rs['pc_bgmoney2']" />
+		</div>        
+		 
+		<div>
+			<label for="pw">互认费/卫检费
+:</label><br />
+			<input type="text" class=":number"  name='pc_tankmoney2' id='pc_tankmoney2'  value="$rs['pc_tankmoney2']" />
+		</div>
+		<div>
+			<label for="pw">其它费:</label><br />
+			<input type="text" class=":number"   name='pc_other2' id='pc_other2'  value="$rs['pc_other2']" />
+		</div>
+		 
+		
+ 	 </div>
+	 <div style='width:100%;height:5px;' class='clear'></div>
+	  
+    <hr style='margin-top:15px;color:red;' />
+	 <div>
+	  <div class="span-23 ">
+	  <div class="span-6">
+			<label for="pw">供应商</label><br />
+			<span id="pr_id"></span>
+		</div> 
+		<div class="span-6">
+			<label for="f1">托车费:</label><br />
+			<input type="text" class=":number"  name='pr_money' id='pr_money'  value="$rs['pr_money']" />
+		</div>
+         
+		<div class="span-6">
+			<label for="f5">码头费:</label><br />
+			<input type="text" class=":number"  name='pr_portmoney' id='pr_portmoney'  value="$rs['pr_portmoney']" />
+		</div>
+		<div class="span-6">
+			<label for="pw">其它费:</label><br />
+			<input type="text" class=":number"  name='pr_other' id='pr_other'  value="$rs['pr_other']" />
+		</div>
+
+	  </div>
+	
+	  <div class="span-7 colborder"> 
+	   
+		
+		
+ 	 </div>
+	    <div class="span-7 last">
+
+		
+ 	 </div>
+	  <div style='width:100%;height:5px;' class='clear'></div>
+	  
+    <hr style='margin-top:15px;color:red;' />
+	
+		<div class=none>
+	    <input type="text" id="id" name="id" class="input-w2 input-text" value="$rs['id']"   />
+		 <input type="text" id="doact" name="doact" class="input-w2 input-text" value="$doact"   />	   
+	   </div>
+	<div class="span-18">
+
+	  <button class="submit button positive" id='btsave' >
+        <img src="{$_public}images/tick.png" alt=""/> 保存
+      </button>
+
+      <a class="button" href="#" id='btreset'>
+        <img src="{$_public}images/cross.png" alt=""/>取消
+      </a>		  
+	  </div>
+ </fieldset>
+</div> 
+</form>
+
+<script type="text/javascript">
+<!--
+
+var billid="{$rs['id']}",
+	b_busid="{$rs['b_busid']}",
+	k_id="{$rs['k_id']}",
+	k_id="{$rs['k_id']}",
+	k_linker="{$rs['k_linker']}"
+
+var bill={
+	getsalesmanlist:"{eval echo U('api/getsalesmanlist')}",
+	getsalesmancustomerlist:"{eval echo U('api/getmycustomerlist')}",
+	getlinkerlist:"{eval echo U('api/getlinkerlist')}",
+	getcompanylist:"{eval echo U('api/getcompanylist')}",
+	div:[],
+	divs:[],
+	init:function(){
+	     
+		 
+		  bill.divs["pb_proid"]={id:"{$rs['pb_proid']}",name:"{$rs['pb_proname']}"};
+		  bill.divs["pc_id"]={id:"{$rs['pc_id']}",name:"{$rs['pc_id_name']}"};
+		  bill.divs["pc_id2"]={id:"{$rs['pc_id2']}",name:"{$rs['pc_id2_name']}"};
+		  bill.divs["pr_id"]={id:"{$rs['pr_id']}",name:"{$rs['pr_id_name']}"};
+
+		  bill.start();
+
+		  bill.b_busid=$('#b_busid').flexbox(bill.getsalesmanlist, {  
+			 displayValue:'username',
+			 hiddenValue:'id',
+			 allowInput: false,
+			 {literal}
+			 resultTemplate: '{username}',
+			 {/literal}
+			 watermark: '选择业务员',
+			 width: 260,
+			  
+			 onSelect: function() {
+			       
+			       bill.getcustomer($('#b_busid_hidden').val());
+				//	alert( );
+						 
+			}					 
+		 });
+		 
+		
+ 
+		 
+		 
+		 bill.edit();
+	},
+	getcustomer:function(id){
+	 $('#k_id').html('');
+	 var url=bill.getsalesmancustomerlist+"&userid="+id
+		bill.k_id=$('#k_id').flexbox(url, {  
+			 displayValue:'j_company',
+			 hiddenValue:'id',
+			 allowInput: true,
+			  showArrow: true,
+			 {literal}
+			 resultTemplate: '{j_company}',
+			 {/literal}
+			 watermark: '选择客户',
+			 width: 220,
+			 onSelect: function() {
+				bill.getlinker($('#k_id_hidden').val());
+					//alert( $('#b_busid_hidden').val());
+						 
+			}					 
+		});	
+	
+	},
+	getlinker:function(id){
+	    $('#k_linker').html('');
+	    var url=bill.getlinkerlist+"&cid="+id
+		bill.k_linker=$('#k_linker').flexbox(url, {  
+			 displayValue:'name',
+			 hiddenValue:'id',
+			 allowInput: false,
+			 {literal}
+			 resultTemplate: '{name}',
+			 {/literal}
+			 watermark: '选择联系人',
+			 width: 260,
+			 onSelect: function() {
+
+					// alert( $('#k_linker_hidden').val());
+						 
+			}					 
+		});	
+	
+	},
+	start:function(){
+		//for(var i=0;i<4;i++){
+		
+		 bill.getcompany("pb_proid",4);		
+		//}
+		//报关公司选择;
+		bill.getcompany("pc_id",1);
+		bill.getcompany("pc_id2",1);	
+		bill.getcompany("pr_id",2);
+	},
+	getcompany:function(div,cate){
+			var url=bill.getcompanylist+"&cate="+cate
+			bill.div[div]=$('#'+div).flexbox(url, {  
+				 displayValue:'name',
+				 hiddenValue:'id',
+				 allowInput: false,
+				 {literal}
+				 resultTemplate: '{name}',
+				 {/literal}
+				 watermark: '选择供应商',
+				 width: 190,
+				 onSelect: function() {	
+							 
+				}					 
+			});	
+			bill.div[div].setValue(bill.divs[div].id,bill.divs[div].name);
+	 
+	
+	},
+	edit:function(){
+	   //更新的时候;
+	   if(billid==0){return ;}
+	   try{
+	    bill.b_busid.setValue('{$rs['b_busid']}','{$rs['username']}'); 
+		 
+		bill.getcustomer($('#b_busid_hidden').val());
+		bill.k_id.setValue('{$rs['k_id']}','{$rs['k_name']}');
+		bill.getlinker($('#k_id_hidden').val());
+		bill.k_linker.setValue('{$rs['k_linker']}','{$rs['k_linker_name']}');
+
+		$("#postdate").attr('disabled',false)
+	  }catch(e){
+	  }
+	}
+
+
+}
+
+VanadiumForm.prototype.success=function(){
+
+     var bid=$('#b_busid_hidden').val()
+     if(Genv.isEmpty(bid)){
+		alert('请选择业务员')
+       	 $('#b_busid_input').focus();
+		 return false;
+	 }
+	 var bid=$('#k_linker_hidden').val()
+     if(Genv.isEmpty(bid)){
+		alert('请选择联系人')
+       	 $('#k_linker_input').focus();
+		 return false;
+	 }
+	 var bid=$('#k_id_hidden').val()
+     if(Genv.isEmpty(bid)){
+		 alert('请选择客户')
+       	 $('#k_id_input').focus();
+		 return false;
+	 }
+	/*核销检测*/
+	  var a=$("#pb_dzf").val();
+	 var b=$("#pb_proid_hidden").val();
+	 if(a!=0&&Genv.isEmpty(b)){
+	  alert('请选择相应的供应商')
+	  return false;
+	 }
+	 /*报关检测*/
+	 var a1=$("#pc_bgmoney").val();
+	 var a2=$("#pc_portmoney").val();
+	 var a3=$("#pc_tankmoney").val();
+	 var a4=$("#pc_other").val();
+
+	 var b=$("#pc_id_hidden").val();
+	 if((a1!=0||a2!=0||a3!=0||a4!=0)&&Genv.isEmpty(b)){
+	  alert('请选择相应的供应商')
+	  return false;
+	 }
+	 /*报关2检测*/
+	 var a1=$("#pc_bgmoney2").val();	  
+	 var a3=$("#pc_tankmoney2").val();
+	 var a4=$("#pc_other2").val();
+	 var b=$("#pc_id2_hidden").val();
+	 if((a1!=0||a3!=0||a4!=0)&&Genv.isEmpty(b)){
+	  alert('请选择相应的供应商')
+	  return false;
+	 }
+	/*托车检测*/
+	var a1=$("#pr_money").val();
+	var a2=$("#pr_portmoney").val();
+	var a3=$("#pr_other").val();
+	 var b=$("#pr_id_hidden").val();
+	 if((a1!=0||a2!=0||a3!=0)&&Genv.isEmpty(b)){
+	  alert('请选择相应的供应商')
+	  return false;
+	 }
+
+	 var j = $("#form").serializeArray();//序列化name/value
+		 
+	 $.ajax({
+           url: "{eval echo U('save')}",           
+		   type:'POST',
+           data: j,           
+           success: function(e) { //返回的json数据
+             str=$.parseJSON(e);
+			 if(str.status==0){
+				alert(str.info)			 
+			 }else{
+               parent.aiqi();
+			 }
+           } 
+     })
+
+	  
+	return false;
+				
+}
+function setproremark(){
+
+
+
+}
+
+$(function(){
+ bill.init();
+ 
+ 
+})	
+//-->
+</script>
+{template formfoot}

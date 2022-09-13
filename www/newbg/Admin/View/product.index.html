@@ -1,0 +1,42 @@
+{template pagegrid}
+
+<style type="text/css">
+	 #myGrid1 { position:absolute; top:70px; left:0; right:0; bottom:50px; }
+
+</style>
+<ul id="contextMenus" style="display:none;position:absolute;z-ingdex:2020">
+			 
+			<li data="edit">修改</li>
+			<li data="delete">删除</li>
+			<li data="view">查看</li>
+</ul>
+<div id='topbar' class="datetitle">
+	<ul  style="">	 
+		<li  class="bt_s4"><a title="添加"  href="{eval echo U('add')}">添加</a></li>
+		<li  class="bt_s4"><a title="删除"  href="javascript:void(0);" id='deleteselect'>删除</a></li>
+		<li  class="bt_s4"><a title="查询"  href="javascript:void(0);" onclick='gridsearch()'>查询</a></li>
+	 </ul> 
+</div> 
+<div id='searchbar' class="searchbar none">
+	 标题<input type=text name='title'><button class=bt_s2>查询</button>
+</div> 
+<div id="myGrid" style='width:100%;height:500px;'></div>
+ 
+<div id="DataGrid" class=DataGrid style='align:left;display:none' url='{$datasrc}'>
+		    <ul>
+				<li title='id' id='id' width="150" type='checkbox'></li>
+				<li title='产品名称' id='name' width="350"></li>
+				<li title='产品分类' id='typename' width="80"></li>
+				<li title='产品型号' id='product_sn' width="80"></li>
+				<li title='进货价' id='jin_price' width="80"></li>
+				<li title='销售价' id='saler_price' width="80"></li>
+				<li title='' id='actlist' width="120"></li>
+				 
+			</ul> 
+			<textarea class="griddata" width=200>{$listdata}</textarea>
+			<textarea class="gridconfig" >var config={checkboxid:'sid',iscount:true}</textarea>
+</div>
+<div id=footbar class="pages "></div>
+</div>
+ </body>
+</html>

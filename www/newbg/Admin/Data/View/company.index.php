@@ -1,0 +1,44 @@
+<? if(!defined('IN_GENV')) exit('Access Denied');?>
+<? include $this->gettpl('pagegrid');?>
+<script type="text/javascript">
+<!--
+	var apiediturl="<? echo U('apiedit')?>";
+//-->
+</script>
+<ul id="contextMenus" style="display:none;position:absolute;z-ingdex:2020">			 
+	<li data="edit">修改</li>
+	<li data="delete">删除</li>
+	<li data="view">查看</li>
+</ul>
+<div id='topbar' class="datetitle">
+	<ul  style="">	 
+		<li  class="bt_s4"><a title="添加"  href="<? echo U('add',array('cate'=>$cate))?>">添加</a></li>
+		<li  class="bt_s4"><a title="删除"  href="javascript:void(0);" id='deleteselect'>删除</a></li>
+		<li  class="bt_s4"><a title="查询"  href="javascript:void(0);" onclick='gridsearch()'>查询</a></li>
+		 
+	 </ul> 
+</div> 
+<div id='searchbar' class="searchbar none">
+<form   class="gridform" target='DataGrid' id="myform" onsubmit='return false;'>
+ 
+	 公司名称<input type=text name='title'>
+	 
+	 <input type=submit class=bt_s2 id=gsearch value='查询' />
+</form>
+</div> 
+<div id="myGrid" style='width:100%;height:500px;'></div>
+ 
+<div id="DataGrid" class=DataGrid style='align:left;display:none' url='<?=$datasrc?>'>
+		    <ul>
+				<li title='id' id='id' width="150" type='checkbox' sortable=true></li>
+				<li title='公司名称' id='name' width="350" sortable=true></li>
+				<li title='排序' id='rank' width="350" editor=TextCellEditor sortable=true></li>
+				 
+			</ul> 
+			<textarea class="griddata" width=200><?=$listdata?></textarea>
+			<textarea class="gridconfig" >var config={checkboxid:'sid',iscount:true}</textarea>
+</div>
+<div id=footbar ><div class=lf>显示条数<input type=text maxlength=3 size=3 onchange="Rsnum()" id="rsnum"></div><div class="pagesdiv">&nbsp;</div></div>
+</div>
+ </body>
+</html>

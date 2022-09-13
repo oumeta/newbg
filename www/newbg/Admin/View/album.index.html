@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> </title>
+<link href="{$_public}swfupload/default.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="{$_public}swfupload/swfupload.js"></script>
+<script type="text/javascript" src="{$_public}swfupload/handlers.js"></script>
+<script type="text/javascript" src="{$_public}script/genv.js"></script>
+<script type="text/javascript">
+{$pageinfo}	
+
+		var swfu;
+		window.onload = function () {
+			swfu = new SWFUpload({
+				// Backend Settings
+				upload_url: "{eval echo U('save')}",
+				post_params: {"PHPSESSID": "{$session_id}"},
+
+				// File Upload Settings
+				file_size_limit : "2 MB",	// 2MB
+				file_types : "*.jpg",
+				file_types_description : "JPG Images",
+				file_upload_limit : 0,
+
+				// Event Handler Settings - these functions as defined in Handlers.js
+				//  The handlers are not part of SWFUpload but are part of my website and control how
+				//  my website reacts to the SWFUpload events.
+				swfupload_preload_handler : preLoad,
+				swfupload_load_failed_handler : loadFailed,
+				file_queue_error_handler : fileQueueError,
+				file_dialog_complete_handler : fileDialogComplete,
+				upload_progress_handler : uploadProgress,
+				upload_error_handler : uploadError,
+				upload_success_handler : uploadSuccess,
+				upload_complete_handler : uploadComplete,
+
+				// Button Settings
+				button_image_url : "{$_public}swfupload/images/SmallSpyGlassWithTransperancy_17x18.png",
+				button_placeholder_id : "spanButtonPlaceholder",
+				button_width: 180,
+				button_height: 18,
+				button_text : '<span class="button">Select Images <span class="buttonSmall">(2 MB Max)</span></span>',
+				button_text_style : '.button { font-family: Helvetica, Arial, sans-serif; font-size: 12pt; } .buttonSmall { font-size: 10pt; }',
+				button_text_top_padding: 0,
+				button_text_left_padding: 18,
+				button_window_mode: SWFUpload.WINDOW_MODE.TRANSPARENT,
+				button_cursor: SWFUpload.CURSOR.HAND,
+				
+				// Flash Settings
+				flash_url : "{$_public}swfupload/swfupload.swf",
+				flash9_url : "{$_public}swfupload/swfupload_FP9.swf",
+
+				custom_settings : {
+					upload_target : "divFileProgressContainer"
+				},
+				
+				// Debug Settings
+				debug: false
+			});
+		};
+
+function uploadSuccess(file, serverData) {
+ 
+    
+	try {
+		var progress = new FileProgress(file,  this.customSettings.upload_target);
+		 
+		var serverData=Genv.json.parse(serverData)
+	 
+		 
+       // eval('serverData = '+serverData);
+        var errorMsg = '';
+       
+        if (serverData.done) {
+            serverData.retval.file_name = file.name;			
+            add_uploadedfile(serverData.retval);
+            progress.setStatus('成功');		
+		} else {
+			//addImage("images/error.gif");
+			progress.setStatus("Error.");
+			progress.toggleCancel(false);
+			alert(serverData);
+
+		}
+
+
+	} catch (ex) {
+		 
+		alert(ex);
+	}
+}
+
+
+//添加产品图片;
+function add_uploadedfile(file_data){
+     
+	 
+    
+	var html=G.$("#thumbnails").html();
+	html+="<img src="+PI.ROOT+"/"+file_data.file_path+" width=100 height=100 onclick=parent.InsertHTML('"+PI.ROOT+"/"+file_data.file_path+"')>";
+    G.$("#thumbnails").html(html);
+}
+//删除产品图片;
+function drop_uploadedfile(file_id){
+    if(!window.confirm('的确要删除吗')){
+        return;
+    }
+	var url="{$url}drop_uploadedfile/?id="+ file_id
+    $2.getJSON(url , function(e){
+	  
+        if(e.status==1){
+            $2('#picture_' + file_id).remove();
+        }else{
+           alert(e.info);
+        }
+    });
+}
+	</script>
+</head>
+<body>
+ 
+	
+<form>
+	<div style="width: 180px; height: 18px; border: solid 1px #7FAAFF; background-color: #C5D9FF; padding: 2px;">
+		<span id="spanButtonPlaceholder"></span>
+	</div>
+</form>	
+<div id="divFileProgressContainer" style="height: 75px;"></div>
+<div id="thumbnails" style='width:220px'></div>
+ 
+</body>
+</html>

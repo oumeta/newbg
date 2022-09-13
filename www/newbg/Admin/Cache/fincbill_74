@@ -1,0 +1,32 @@
+SELECT
+    a.id AS id,
+    a.b_code AS b_code,
+    a.count_shu AS count_shu,
+    a.count_zhi AS count_zhi,
+    a.shi_shu AS shi_shu,
+    a.shi_zhi AS shi_zhi,
+    a.account AS account,
+    a.postdate AS postdate,
+    a.finshdate AS finshdate,
+    a.editdate AS editdate,
+    a.status AS status,
+    a.b_opeid AS b_opeid,
+    a.b_busid AS b_busid,
+    a.b_product_name AS b_product_name,
+    a.b_tank_code AS b_tank_code,
+    a.b_so AS b_so,
+    a.pc_port AS pc_port,
+    a.pb_proid AS pb_proid,
+    a.pc_id AS pc_id,
+    a.pc_id2 AS pc_id2,
+    a.pr_id AS pr_id,
+    a.k_id AS k_id,
+    a.ischagui AS ischagui,
+    b.j_company AS j_company
+FROM
+    jp_bill a
+LEFT JOIN jp_customer b ON a.k_id=b.id
+WHERE
+     status in( 0,1,2,3,4,5 ) and (b_busid in(88,74,75,76,120,111,113,110) or b_opeid in(88,74,75,76,120,111,113,110) )
+ORDER BY
+    a.id DESC

@@ -1,0 +1,222 @@
+{template pageform}
+<script language="JavaScript" src="{$_public}newjs/jquery.date_input.js"></script>
+ <script type="text/javascript">
+ $($.date_input.initialize);
+ </script>
+ <style type="text/css" media="screen">
+
+@import '{$_public}newcss/date_input.css';
+ #com_div{
+ width:450px;
+ float:right;
+
+ margin-right:198px;
+ }
+
+</style>
+ <body class="yui-skin-sam">
+
+ <div style="z-index: 2; visibility: visible; left: 10px; top: 10px;" id="toolBoxHolder_c" class="yui-panel-container shadow">
+ <div style="visibility: inherit; width: 750px;" class="yui-module yui-overlay yui-panel" id="toolBoxHolder">
+    <div id="toolBoxHolder_h" style="cursor: move;" class="hd">收付款添加</div>
+    <div class="bd">
+    <form id="myform" action="{eval echo U('save')}" method=post>
+        <fieldset>
+            <legend>基本信息</legend>
+            <div >
+				<label>选择对像:
+					<select name=comcate id=comcate onChange=searchAct(this.options[this.selectedIndex].value)>
+						<option value=''></option>
+						 <option value=0 {if $rs['comcate']==0&&!is_null($rs['comcate'])}selected{/if}>客户</option>
+						 <option value=1 {if $rs['comcate']==1}selected{/if}>报关</option>
+						 <option value=2 {if $rs['comcate']==2}selected{/if}>托车</option>
+						 <option value=4 {if $rs['comcate']==4}selected{/if}>核销单</option>
+
+
+
+					</select>
+				</label>
+			</div>
+			 <div >
+				<label >付款对像:<span id='com_div' ></span>
+				</label>
+			</div>
+
+			<div >
+				 日&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;期:
+					 <input type="text" size="20" class="input-w2 input-text date_input" name='postdate' id='postdate' value="$rs['postdate']" readonly  />
+
+			</div>
+			 <div >
+				<label>选择类型:
+					<select name=cate id=cate>
+						 <option value=0 {if $rs['cate']==0}selected{/if}>收款</option>
+						 <option value=1 {if $rs['cate']==1}selected{/if}>付款</option>
+						 <option value=2 {if $rs['cate']==2}selected{/if}>回扣</option>
+
+					</select>
+
+				</label>
+			</div>
+
+
+			<div >
+				<label>选择银行:
+					<select name=bankid id=bankid>
+					 {loop $bank $key $v}
+					 <option value=$key {if $rs['bankid']==$key}selected{/if}>$v</option>
+					 {/loop}
+					</select>
+				</label>
+			</div>
+			 <div >
+				<label>金&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;额:
+					 <input type="text" size="20" class="input-w2 input-text :required :number" name='money' id='money' value="{$rs['money']}"  />
+				</label>
+			</div>
+
+			 年份：<select name=fyear id=fyear>
+
+	{eval for($i=2008;$i<2050;$i++){}
+		<option value="$i" {if $d3==$i}selected{/if}>$i</option>
+     <?}?>
+	 </select>
+	月份:<select name=fmonth id=fmonth>
+	{eval for($i=1;$i<=12;$i++){}
+		<option value="$i" {if $d4==$i}selected{/if}>$i</option>
+     <?}?>
+	 </select>
+
+
+			 <div >
+				<label>描&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;述:
+					 <input type="text" size="20" class="input-w2 input-text" name='remark' id='remark' value="{$rs['remark']}"  />
+				</label>
+			</div>
+
+        </fieldset>
+
+
+		<div>
+		 <input type="hidden" id="id" name="id" class="input-w2 input-text" value="$rs['id']"   />
+		 <input type="hidden" id="doact" name="doact" class="input-w2 input-text" value="$doact"   />
+        	<span id="setHeader" class="yui-button yui-push-button"><span class="first-child">
+			<button id="btsave" tabindex="0" type="button"  class='submit'>保存信息</button></span></span>
+		</div>
+
+
+    </form>
+    </div>
+</div>
+<div class="underlay"></div>
+
+</div>
+
+</div>
+
+
+
+
+<script type="text/javascript">
+<!--
+
+var oo;
+function searchAct(a){
+   var url=''
+   if(a==0){
+	 url="{eval echo U('api/getcustomerlist')}"
+	 var cc='j_company'
+   }else{
+     url="{eval echo U('api/getcompanylist')}"+"&cate="+a
+	 var cc='name'
+   }
+   $("#com_div").html('')
+	  oo=$('#com_div').flexbox(url,{
+			 displayValue:cc,
+			 hiddenValue:'id',
+			  showArrow: true,
+
+			 {literal}
+			 resultTemplate: '{'+cc+'}',
+			 {/literal}
+			 watermark: '请选择',
+			 width: 420
+	 });
+}
+
+
+
+//配置表格;
+function $1(s){return document.getElementById(s);}
+
+function cateFormatter(row, cell, value, columnDef, dataContext) {
+
+            if (value ==0)
+                return "<span class='load-hi1'>收款</span>";
+            else if (value==1)
+                return "<span class='load-medium'>付款</span>";
+			else if(value==2)
+			    return "<span class='load-medium'>回扣</span>"
+
+
+}
+
+var id="{$rs['id']}";
+var com_cate="{$rs['comcate']}";
+
+$(function(){
+
+		if(id==0){
+			 return ;
+		}
+
+	   try{
+		searchAct(com_cate);
+
+	    oo.setValue('{$rs['comid']}','{$rs['comname']}');
+
+	  }catch(e){
+	}
+
+})
+
+
+
+
+
+
+
+VanadiumForm.prototype.success=function(){
+	//$("#btsave").click(function(){
+	   var j = $("#myform").serialize();//序列化name/value
+	    //alert(j)
+       $.ajax({
+           url: "{eval echo U('save')}",
+           type:'POST',
+           data: j,
+           success: function(e) { //返回的json数据
+
+				  str=$.parseJSON(e);
+
+
+				 if(str.status==0){
+					 alert(str.info)
+				 }else{
+				     parent.aiqi();
+				 }
+
+
+           }
+     })
+		//$("#myform").submit();
+	//});
+	return false;
+
+}
+
+
+
+
+//-->
+</script>
+

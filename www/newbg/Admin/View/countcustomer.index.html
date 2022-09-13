@@ -1,0 +1,42 @@
+ {template formhead}
+<div  >
+   <form method='post' action="{eval echo U('index')}" >
+	客户:<span id="d1"  ></span>	 
+	日期:<input name="d2" type="text" id="d2" class="date_input" value=" " />
+	日期:<input name="d3" type="text" id="d3" class="date_input" value=" " />
+	<input type=submit value='查询'>
+	</form>
+</div>  
+ <table border=1 width=100%>
+ <tr bgcolor=white><td>序号</td><td>公司名称</td><td>交易数</td></tr>
+ {loop $dlist $key $v}
+ <tr><td>$key</td><td>$v[kname]</td><td>$v[countid]</td> </tr>
+ {/loop}
+ </table>
+
+ <script type="text/javascript">
+ <!--
+$(function(){
+    var url="{eval echo U('api/getcustomerlist')}";
+	$('#d1').flexbox(url, {  
+		 displayValue:'j_company',
+		 hiddenValue:'id',
+		 allowInput: false,
+		 {literal}
+		 resultTemplate: '{j_company}',
+		 {/literal}
+		 watermark: '选择客户',
+		 width: 260,
+		  
+		 onSelect: function() {
+			   
+			   //bill.getcustomer($('#b_busid_hidden').val());
+			//	alert( );
+					 
+		}					 
+	});	
+
+})
+ //-->
+ </script>
+ {template formfoot}

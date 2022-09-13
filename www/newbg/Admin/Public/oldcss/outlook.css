@@ -1,0 +1,54 @@
+.outlook-innercont
+{
+	width: 100%; height: 100%; cursor: default;
+	background-color: #dfe8f6;
+}
+.outlook-caption
+{
+	background:#fff url("../images/outlook-caption.gif") repeat-x 0 0;
+	width: auto; height: 25px; line-height: 25px;
+	text-align: center; font-size: 14px; color: #00357c; font-weight: bold;
+	cursor: hand;
+}
+.outlook-caption-on
+{
+	background-position: 0 -25px;
+}
+.outlook-cont
+{
+	width: auto; display: none;
+	overflow: auto; overflow-y: auto;
+}
+.outlook-tree-item
+{
+	position: relative;
+	width: auto; height: 20px;
+	margin-left: 9px;
+}
+.outlook-tree-item .icon
+{
+	position: absolute; left: 0; top: 3px;
+	width: 9px; height: 9px; overflow: hidden;
+}
+.outlook-tree-item .subico
+{
+	background-image: url("../images/outlook-tree-suboff.gif");
+}
+.outlook-tree-item .subico-open
+{
+	background-image: url("../images/outlook-tree-subon.gif");
+}
+.outlook-tree-item .subico-on
+{
+	background-position: 0 -9px;
+}
+.outlook-tree-item .text
+{
+	position: absolute; left: 9px; top: 0px;
+	height: 20px; line-height: 20px;
+	font-size: 12px;
+}
+.outlook-tree-item .text a
+{
+	color: black;
+}

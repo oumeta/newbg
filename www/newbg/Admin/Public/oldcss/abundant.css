@@ -1,0 +1,399 @@
+/*
+ * @(#)  abundant.css
+ * 丰富模式的UI样式表
+ * @author   gugao
+ * @date     2007-12-05
+ * @version  1.0
+ */
+body { margin:0; }
+#bodyPanel { padding: 50px 50px; }
+#contentPanel { margin: 10px; }
+.gbPanel { padding:5px; }
+.method-area1,.method-area2 { width: 463px; margin-left: 10px; }
+.method-area1 td { width:20%; }
+.method-area2 td { width:25%; }
+
+
+form { margin: 0; }
+input,textarea { font: normal 12px tahoma, arial, helvetica, sans-serif; }
+.font {font: normal 12px tahoma, arial, helvetica, sans-serif;}
+
+body {
+	scrollbar-3dlight-color: #3465A4;
+	scrollbar-darkshadow-color: #3465A4;
+	scrollbar-highlight-color: #DCE8F4;
+	scrollbar-shadow-color: #DCE8F4;
+	scrollbar-face-color: #7DA6D7;
+	scrollbar-arrow-color: #2A5995;
+	scrollbar-track-color: #E6E6E6;
+	background-color: #FFF;
+	cursor: default;
+}
+
+.border-blur {
+	border: 1px solid #B5B8C8;
+}
+.border-focus {
+	border: 1px solid #7EADD9;
+}
+.text-bg {
+	background: #FFF url(../images/text_bg.gif) repeat-x top;
+}
+.validErr {
+	background: #FFF url(../images/invalid_line.gif) repeat-x bottom;
+	border: 1px solid #dd7870;
+}
+
+.textField {
+	height: 21px;
+	line-height: 15px;
+	vertical-align: middle;
+	padding: 2px 3px 0 3px;
+}
+
+.textArea {
+	background-attachment: fixed!important inherit;
+	overflow-y: auto;
+	padding-left: 3px;
+}
+
+.spinnerField-btnArea {
+	border-top: 1px solid #FFF;
+	border-left: 1px solid #FFF;
+	border-right: 1px solid #FFF;
+}
+
+.spinnerField-btn {
+	width: 15px;
+	height: 8px!important;
+	height: 9px;
+	font-size: 0px;
+	background: url(../images/spinner_btn.gif);
+	border-bottom: 1px solid #FFF;
+}
+
+.spinnerField-text {
+	width: 100%;
+	height: 15px!important;
+	height: 16px;
+	background: transparent;
+	border: none;
+	line-height: 16px;
+	vertical-align: middle;
+	padding: 0 3px 0;
+}
+
+.listView {
+	background-color: #FFF;
+	overflow: hidden;
+	overflow-y: auto;
+}
+
+.listView-item {
+	width: 100%;
+	line-height: 15px;
+	vertical-align: middle;
+	padding: 2px 5px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	cursor: default;
+	-moz-user-select: -moz-none;
+}
+
+.listView-alt {
+	background-color: #DFE8F6;
+	border: 1px dashed #A3BAE9;
+	padding: 1px 4px;
+}
+
+.combo-btn {
+	border: 1px solid #FFF;
+	background: url(../images/combo_btn.gif);
+	float: right;
+}
+
+.combo-panel {
+	background-color: #FFF;
+	position: absolute;
+	filter: alpha(opacity = 90);
+	-moz-opacity: 0.90;
+	z-index: 99996;
+}
+
+.crBox-icon {
+	width: 13px;
+	height: 13px;
+	font-size: 5px;
+	float: left;
+	margin-top: 1px;
+}
+
+.crBox-text {
+	line-height: 15px;
+	vertical-align: middle;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	margin-left: 8px;
+	float: left;
+	cursor: default;
+	-moz-user-select: -moz-none;
+}
+
+.checkBox {
+	background-image: url(../images/checkBox.gif);
+}
+
+.radioButton {
+	background-image: url(../images/radioButton.gif);
+}
+
+.slideBars-axle {
+	width: 2px;
+	height: 16px;
+	background-image: url(../images/sliderBar_BG.gif);
+	float: left;
+}
+
+.slideBars-axle div {
+	width: 10px;
+	height: 16px;
+	background-image: url(../images/sliderBar_block.gif);
+}
+
+.btn-bg {
+	background: url(../images/button_bg.gif);
+}
+
+.btn-side {
+	width: 3px;
+	height: 21px;
+	float: left;
+}
+
+.btn-body {
+	height: 21px;
+	text-align: center;
+	float: left;
+	-moz-user-select: -moz-none;
+}
+
+.btn-body button {
+	clear: none;
+	height: 20px;
+	background: transparent;
+	line-height: 19px;
+	vertical-align: baseline;
+	border: none;
+	padding: 1px 4px 0 !important 0 4px;
+	overflow: visible;
+}
+
+.groupBox {
+	border: 1px dashed #B5B8C8;
+	padding: 0px;
+}
+
+.groupBox-min {
+	border: none;
+	border-top: 1px solid #B5B8C8;
+	padding: 0 0 0 1px;
+}
+
+.groupBox-caption {
+	color:#15428B;
+	font-weight:bold;
+	line-height: 14px;
+	vertical-align: middle;
+	padding: 0 50px!important;
+	padding: 0 3px;
+	margin-left: 1px!important;
+	 
+	margin-left: 2px;
+}
+#groupBox-caption-div{
+  	margin-top: -10px!important;	
+	 
+}
++html #groupBox-caption-div{
+  	margin-top: 1px 	
+	 
+}
+.groupBox-btn {
+	width: 15px;
+	height: 15px;
+	background: url(../images/small_btn.gif);
+	margin-right: 7px!important;
+	margin-right:  4px;
+	float: left;
+ 	cursor: pointer;
+}
+
+.covering-layer {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background-color: #888888;
+	filter: alpha(opacity = 20);
+	-moz-opacity: 0.2;
+}
+
+.drag-layer {
+	border: 2px solid #164D74;
+	background-color: #BDDBF2;
+	position: absolute;
+	filter: alpha(opacity = 20);
+	-moz-opacity: 0.2;
+	z-index: 99999;
+}
+/*面板和窗口样式*/
+/*----------公共左右边----------*/
+.x-pne-left {
+	padding-left: 6px;
+	background-repeat: no-repeat;
+}
+.x-pne-right {
+	padding-right: 6px;
+	background-repeat: no-repeat;
+}
+/*--------公共的四角四边--------*/
+.x-pne-lt {
+	background-position: left 0;
+}
+.x-pne-lb {
+	background-position: left -26px;
+}
+.x-pne-rt {
+	background-position: right -38px;
+}
+.x-pne-rb {
+	background-position: right -64px;
+}
+.x-pne-t {background-color: #FFF;
+	background-position: 0 38px;
+	padding-top: 5px;
+}
+.x-pne-b {
+	height: 12px;
+	background-position: 0 12px;
+	font-size: 0px;
+}
+.x-pne-l {
+	padding-left: 6px;
+	background-position: left;
+}
+.x-pne-r {
+	padding-right: 6px;
+	background-position: right;
+}
+.x-pne-c {
+	overflow: hidden;
+}
+/*----------公共标题栏----------*/
+.x-pne-caption {
+	width: auto!important;
+	width: 100%;
+	height: 19px;
+	color: #15428B;
+	font-weight: bold;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	cursor: default;
+}
+/*----------公共的按钮----------*/
+.x-pne-btn {
+	width: 15px;
+	height: 15px;
+	background-image: url(../images/win_btn.gif);
+	font-size: 0px;
+	margin-left: 2px;
+	float: right;
+}
+
+/*----------panel相关----------*/
+/*背景*/
+.x-pne .corner-bg {
+	background-image: url(../images/panel-t-b.gif);
+}
+.x-pne .side-bg {
+	background-image: url(../images/panel-l-r.gif);
+	background-repeat: repeat-y;
+}
+/*主面板*/
+.x-pne .x-pne-c {
+	background-color: #E4EBF6;
+}
+
+/*---------window相关---------*/
+/*背景*/
+.x-win .corner-bg,.x-win-max .corner-bg {
+	background-image: url(../images/win-t-b.gif);
+}
+.x-win .side-bg,.x-win-max .side-bg {
+	background-image: url(../images/win-l-r.gif);
+	background-repeat: repeat-y;
+}
+/*窗体*/
+.x-win {
+	background-color: #FFF;
+	position: absolute;
+}
+/*标题栏图标*/
+.x-pne-caption img {
+	margin-right: 6px;
+}
+/*主面板*/
+.x-win .x-pne-c,.x-win-max .x-pne-c {
+	background-color: #CADAEF;
+}
+/*最大化*/
+.x-win-max .x-pne-left,.x-win-max .x-pne-right,.x-win-max .x-pne-l,.x-win-max .x-pne-r {
+	padding: 0px;
+}
+.x-win-max .x-pne-t {
+	padding: 5px 4px 0 4px;
+}
+/*最小化*/
+.x-win-min {
+	border-bottom: 1px solid #88A2C3;
+}
+/*---------提示框相关---------*/
+.msg-panel {
+	border: 1px solid #A3BAE9;
+	padding: 12px 17px;
+	margin-bottom: 7px;
+}
+.msg-panel table {
+	margin-left:56px;
+	border-collapse:collapse;
+}
+.alert-ico {
+	background: #FFF url(../images/alert.gif) no-repeat 17px 22px;
+}
+.confirm-ico {
+	background: #FFF url(../images/confirm.gif) no-repeat 16px 22px;
+}
+#Dtitle{
+	font-size: 16px;
+	font-weight: bold;
+	text-align:center;
+}
+table.list {
+	margin: 1px 0px;
+	padding:1px;
+	border-collapse: collapse;
+	border: 1px solid gray;
+	text-align: left;
+	width:500;
+	float:left;
+	font-size:9px;
+}
+ table.list td{
+	border-left: 1px solid silver;
+	border-bottom:1px solid silver;
+	vertical-align: top;
+
+}
+ table.list tr{
+	height:11px;
+
+}

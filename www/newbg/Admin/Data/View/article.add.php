@@ -1,0 +1,112 @@
+<? if(!defined('IN_GENV')) exit('Access Denied');?>
+<? include $this->gettpl('pageform');?>
+	 
+ <body class="yui-skin-sam">
+ 
+ <div style="z-index: 2; visibility: visible; left: 10px; top: 10px;" id="toolBoxHolder_c" class="yui-panel-container shadow">
+ <div style="visibility: inherit; width: 750px;" class="yui-module yui-overlay yui-panel" id="toolBoxHolder">
+    <div id="toolBoxHolder_h" style="cursor: move;" class="hd">商户信息添加</div>
+    <div class="bd">
+    <form id="form" action="<? echo U('save')?>" method=post>
+        <fieldset>
+            <legend>基本信息</legend>
+            <div >
+				<label>标题:
+					 <input type="text" id="title" name="title" class="input-w2 input-text" value="<?=$rs['title']?>"   />
+				</label>				
+			</div>		 
+		 
+        </fieldset>
+        <fieldset>
+            <legend>内容</legend>
+			<textarea name="content" id="content"><?=$rs['content']?></textarea>
+			<? echo Form::editor('content','full','article','','',1)?>
+			 
+            <!--textarea style="height:150px;width:90%" autocomplete="off" id="text" name="text"><?=$rs['text']?></textarea-->
+        </fieldset>
+       <div class=none>
+	    <input type="text" id="id" name="id" class="input-w2 input-text" value="<?=$rs['id']?>"   />
+		 <input type="text" id="doact" name="doact" class="input-w2 input-text" value="<?=$doact?>"   />
+	   
+	   </div>
+
+		<div>
+        	<span id="setHeader" class="yui-button yui-push-button"><span class="first-child"><button id="btsave" tabindex="0" type="button">保存信息</button></span></span>
+		</div>
+		 
+
+    </form>
+    </div>
+</div>
+<div class="underlay"></div>
+
+</div>
+
+
+ 
+
+<div style="z-index: 2; visibility: visible; left: 780px; top: 10px;width:300px;" class="yui-module yui-overlay " id="classPath">
+ <div style="z-index: 2; visibility: visible; left: 0px; top: 0px;" id="toolBoxHolder_c" class="yui-panel-container shadow">
+ <div style="visibility: inherit; width: 300px;" class="yui-module yui-overlay yui-panel" id="toolBoxHolder">
+    <div id="toolBoxHolder_h" style="cursor: move;" class="hd">选择分类</div>
+    <div class="bd">
+    <form id="grids">
+        <fieldset>
+            <legend>Body Size</legend>
+            <select id="which_doc">
+                <option selected="selected" value="doc">750px</option>
+                <option value="doc2">950px</option>
+                <option value="doc4">974px</option>
+                <option value="doc3">100%</option>
+                <option value="custom-doc" id="customDoc">Custom</option>
+            </select> <a href=# onclick=opendialog1()>adsf</a>
+        </fieldset>
+		 <fieldset id='uploadFieldset' class=none>
+            <legend>上传</legend>
+            <iframe id=uploadiframe src='' margin=0 frameborder=0 border=0 width='100%' height="400"></iframe>
+        </fieldset>
+         
+		 
+
+    </form>
+    </div>
+</div>
+<div class="underlay"></div>
+
+</div>
+</div>
+<script type="text/javascript">
+<!--
+	$(function(){
+		$("#uploadFieldset").hide();
+	
+		$("#btupload").click(function(){
+		 $("#uploadFieldset").show();
+		  $("#uploadiframe").attr('src',"<? echo U('album/index')?>");
+		
+		})
+		$("#btsave").click(function(){
+		 $("#form").submit();
+		   
+		
+		})
+	
+	})
+function InsertHTML(img){
+	// Get the editor instance that we want to interact with.
+// parent.dump(CKEDITOR.instances,1)
+	var oEditor = CKEDITOR.instances.content;
+	var value = "<img src='"+img+"'>";//document.getElementById( 'content' ).value;
+
+	// Check the active editing mode.
+	if ( oEditor.mode == 'wysiwyg' )
+	{
+		// Insert the desired HTML.
+		oEditor.insertHtml( value );
+	}
+	else
+		alert( 'You must be on WYSIWYG mode!' );
+}
+
+//-->
+</script>

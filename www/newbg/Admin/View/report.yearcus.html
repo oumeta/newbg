@@ -1,0 +1,55 @@
+ {template reporthead}
+<div  >
+   <form method='post' action="{eval echo U()}" >
+    年份：<select name=d1>
+	<option value="0">请选择年</option>
+	{eval for($i=2008;$i<2050;$i++){}
+		<option value="$i" {if $d1==$i}selected{/if}>$i</option>
+     <?}?>
+	 </select>
+
+ 	<input type=submit value='查询'>
+	</form>
+</div>
+
+
+ <table    class=reporttable cellspacing="0" width=600 align=center>
+ <caption>{$d1}客户未付款 </caption>
+ <tr><th width =80>姓名</th><th width=90>客户</th>
+		{eval for($i=1;$i<=12;$i++){}
+			<th style='width:60px;'>$i月</th>
+		 <?}?>
+		 <th>共计</th>
+</tr>
+ {loop $dlist $key $v}
+
+	    {loop $v['data'] $m $n}
+		<tr>{if $m==0}<td rowspan={eval echo count($v['data'])} width =80>$v['username']</td>{/if}
+		<td>$n['j_company']</td>
+		{eval for($i=1;$i<=13;$i++){}
+			<td>
+			$n["c".$i]
+			 </td>
+		 <?}?>
+		</tr>
+		 {/loop}
+		<tr class=spec><td>小计</td><td></td>
+
+		{eval for($i=1;$i<=13;$i++){}
+			<td>
+			{eval echo $v['count'.$i]}
+			 </td>
+		 <?}?>
+		 </tr>
+
+ {/loop}
+<tr class=spec><td>共计</td><td></td>
+{eval for($i=1;$i<=13;$i++){}
+			<td>
+			{eval echo $dt['count'.$i]}
+			 </td>
+		 <?}?>
+ </tr>
+ </table>
+ {template formfoot}
+

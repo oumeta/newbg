@@ -1,0 +1,105 @@
+{template pagegrid}
+<style type="text/css">
+	#remark{
+	
+	overflow: auto;
+	margin: 0;
+	padding: 0;
+	 
+	 
+	border:1px solid gray;
+	font-size: 13pt;
+	font-weight: normal;
+	text-decoration: none;
+	width:500px;
+	height:500px; 
+	position: absolute;
+	left:410px;
+	top:0px;
+	line-height:30px;
+	letter-spacing: 1mm;
+
+	
+	}
+	.title{
+	font-size: 15pt;
+		font-weight:100 ;
+		text-align:center;
+	
+	}
+</style>
+<div id='searchbar' class="searchbar none">
+<form   class="gridform" target='DataGrid' id="myform" onsubmit='return false;'>
+	 标题<input type=text name='title'>
+	 标题<input type=text name='title1'>
+	 <input type=submit class=bt_s2 id=gsearch value='查询' />
+</form>
+</div> 
+<div id="myGrid" style='width:400px;height:500px;'></div>
+ 
+<div id="DataGrid" class=DataGrid style='align:left;display:none' url='{$datasrc}'>
+		    <ul>
+				
+				<li title='标题' id='title' width="350" sortable=true></li>
+				 
+			</ul> 
+			<textarea class="griddata" width=200>{$listdata}</textarea>
+			<textarea class="gridconfig" >var config={checkboxid:'sid',iscount:true}</textarea>
+</div>
+<div id=footbar class="pages "></div>
+<div id=remark>点击标题，这里显示内容。
+</div>
+</div>
+
+
+
+<script type="text/javascript">
+<!--
+
+
+function setgrid(){
+ 
+	　
+
+	 
+	grid.onDblClick.subscribe( function (e, dt){	
+				 
+				  editData(dt.row); 
+				return true;
+
+			 });
+
+	 
+}
+function editData(row){
+ 
+ 
+	    var id=data[row].id;
+		$("#background").show();
+		$("#progressBar").show();		 
+		$.ajax({ 
+				url: PI.URL+"/look/?id="+id+"&mid="+PI.mid+"&r="+Math.floor(Math.random() * 2147483648).toString(36), 
+			//	context: document.body,
+				
+				ifModified:true,
+				success: function(e){				 
+					str=$.parseJSON(e);	
+				    if(str.status==1){
+					var ss=''
+					ss+="<div class=title>"+str.info.title+"</div><br><hr>"
+					ss+="<div class=contt>"+str.info.content+"</div>"
+
+					$("#remark").html(ss).show('slow')
+					
+					}
+					$("#background").hide();
+					$("#progressBar").hide();	
+				}
+			});
+
+}
+
+//-->
+</script>
+ </body>
+</html>

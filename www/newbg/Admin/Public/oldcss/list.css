@@ -1,0 +1,208 @@
+
+
+html, body, img, a img, form {
+	margin: 0;
+	padding: 0;
+	border: 0 none;	
+	/*filter:alpha(opacity=80);*/
+	 
+}
+img {
+	/*text-align:absmiddle;*/
+	background-color:transparent;
+	}
+html, body, p,table {
+	font: normal normal normal 14px Tahoma,Verdana, Helvetica, Arial, sans-serif;
+	/*line-height:50;*/	 
+}
+.gcheckbox{
+	border: 0px solid gray; 
+	margin:0;
+	 
+}
+
+input,textarea,select, file {
+	border: 1px solid gray;
+	padding: 2px 2px;
+	margin:0;
+	overflow:hidden;
+	background:white;
+	font: 100%/1.0em Arial, Helvetica, sans-serif;
+	color: #444;
+}
+button{
+ 
+BORDER-RIGHT: #2C59AA 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #2C59AA 1px solid; PADDING-LEFT: 2px; FONT-SIZE: 12px; FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#D7E7FA); BORDER-LEFT: #2C59AA 1px solid; CURSOR: hand; COLOR: black; PADDING-TOP: 2px; BORDER-BOTTOM: #2C59AA 1px solid 
+  
+}
+ 
+input.focus{
+	/*filter:blur(strength=50) ;*/
+	border:1pt solid green;
+}
+#DataGrid
+{
+	border:0px solid #DAEFFC; 
+	width:100%;	 	 
+	background-color:white;	
+	text-align:center;
+    font-size:11px;	 
+	color:black;
+	text-decoration:none; 	
+	
+}
+#divMain
+{	overflow:auto;
+	position:relative;
+	width:100%;	 
+	 
+	SCROLLBAR-FACE-COLOR: #DAEFFC;
+	SCROLLBAR-SHADOW-COLOR: #DAEFFC;
+	SCROLLBAR-HIGHLIGHT-COLOR: #DAEFFC;
+	SCROLLBAR-3DLIGHT-COLOR: #DDF8FF;
+	SCROLLBAR-DARKSHADOW-COLOR: #92C0D1;
+	SCROLLBAR-TRACK-COLOR:#BED8EB;
+	SCROLLBAR-ARROW-COLOR: #92C0D1 
+}
+#divact
+{   
+    color:#157409;
+	border:0px solid #7AD86E;
+	width:100%;
+	background:#EDF6FF;
+	margin:0 3px;	
+	text-align:right;
+}
+.my
+{      
+	width:100%;	 
+	background:#EDF6FF;	 
+}
+.fTD{
+border-left: 0px solid gray;border-right: 1px solid #E3E3E3;border-bottom: 1px solid #E3E3E3;
+}
+.fTDbutton{
+border-left: 0px solid gray;border-right: 1px solid #E3E3E3;border-bottom: 1px solid black;text-align:center
+}
+TABLE.dgMain TR.hover {
+	BACKGROUND: #e0e3ef
+	 
+}
+TABLE.dgMain TR.hover TD {    
+	BORDER-BOTTOM: #a4a0a8 1px solid
+}
+TABLE.dgMain, TD.hover {
+	BACKGROUND: #a8afcf
+}
+TABLE.dgMain, TD { 
+	text-align: left;	 
+	text-overflow: ellipsis;
+	-moz-text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+TABLE.dgHead TH {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: normal; PADDING-BOTTOM: 2px; PADDING-TOP: 2px; BORDER-BOTTOM: #cbc7b8 1px solid; 	background-color:#EDF6FF; TEXT-ALIGN: left;overflow: hidden;
+	white-space: nowrap;-moz-user-select:none
+}
+TABLE.dgHead TH SPAN {
+	BORDER-RIGHT: red 0px solid; DISPLAY: block; FLOAT: right;margin-top:-20px;WIDTH: 10px; CURSOR: e-resize; HEIGHT: 20px;font-size:10px;
+}
+ 
+TABLE.dgMain {	 
+    font-size:12px;	 	 
+	width:100%
+} 
+/* ߿ */
+.bLeft{
+	border-left-width: 3px;
+	border-left-color:gray;
+}
+/* DIV뷽�?*/
+.fLeft{float:left}
+.fRig{float:right}
+.fNone{float:none}
+.cBoth{clear:both}
+.none{
+display:none; 
+}
+
+ /* SIDE */
+
+.side {
+	width:100%;	 
+	clear:right;
+	float:right;
+	font-size:0.9em;
+	padding-bottom:2em;
+	height:auto; background:#f6faff; border:1px solid #8db2e3; filter:alpha(opacity=94); padding:0.4em; overflow:hidden
+	}
+
+.side p, .side li {
+	line-height:1.5;
+	}
+
+.side p {
+	margin:0.75em 0;
+	}
+
+.side h2, #loginbox h2 {
+	font-size:1.1em;
+	text-transform:uppercase;
+	border-bottom:1px dotted #999;
+	padding-bottom:2px;
+	margin:1.4em 0 1em 0;
+	}
+
+.side ul {
+	margin-left:0;
+	list-style:none;
+	}
+
+.side .sidemenu {
+	list-style:none;
+	margin:0 0 1.4em 0;
+	scrollbar-face-color: #f2f2f2;
+	scrollbar-highlight-color: #f6faff;
+	scrollbar-shadow-color: #cccccc;
+	scrollbar-3dlight-color: #dddddd;
+	scrollbar-arrow-color: #336000;
+	scrollbar-track-color: #f6faff;
+	scrollbar-darkshadow-color: #ffffff;
+	overflow-y:scroll;
+	overflow-x:hidden;
+	max-height:150px;
+	height:auto;
+	_height:150px;
+	border:1px solid #e8eef7;
+	padding:-2px 2px;
+	}
+
+.side .sidemenu li {
+	font-size:12px;
+	color:#3267ac; 
+	text-decoration:none;
+	display:block; 
+    padding:3px 3px 3px 12px; 
+	overflow:hidden; 
+	white-space:nowrap;
+	text-overflow:ellipsis; 
+	background:#fff url(../images/square1.gif) center left no-repeat;
+	padding-left:16px;
+	}
+
+.side .sidemenu li.current, .side .sidemenu li:hover {
+		font-size:12px;
+	color:#3267ac; 
+	text-decoration:none;
+	display:block; 
+    padding:3px 3px 3px 12px; 
+	overflow:hidden; 
+	white-space:nowrap;
+	text-overflow:ellipsis; 
+	background:#fff url(../images/square2.gif) center left no-repeat;
+	font-size:12px;
+	border:1px solid #8db2e3;
+	padding:2px 2px 2px 11px; color:#000
+	}

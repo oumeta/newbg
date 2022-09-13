@@ -1,0 +1,401 @@
+{template page_head}
+ <div class="main">
+    <div class="body body-950">
+        <div class="container typecho-page-title">
+    <div class="column-24">
+
+        <h2>用记信息</h2>
+        <p><a href="http://localhost/typecho/"></a></p>
+    </div>
+</div>
+        <div class="container typecho-page-main typecho-post-option typecho-post-area">
+            <form action="{eval echo U('save')}" method="post" name="write_post">
+                <div class="column-18 suffix" id="test">
+                    <div class="column-18">
+
+                        <label for="title" class="typecho-label">账号</label>
+                        <p class="title"><input type="text" id="account" name="account" value="$rs['account']" class="text title" />
+                        </p>
+						<label for="title" class="typecho-label">密码</label>
+						<p class="title"><input type="text" id="add" name="password" value="" class="text title" />
+                        </p><p>不修改请不要填写</p>
+						 <label for="title" class="typecho-label">账号</label>
+                        <p class="title"><input type="text" id="nickname" name="nickname" value="$rs['nickname']" class="text title" />
+                        </p>
+						 <label for="title" class="typecho-label">图像</label>
+                        <p class="title"><input type="text" id="header" name="header" value="$rs['header']" class="text title" />
+                        </p>
+						 <label for="title" class="typecho-label">签名档</label>
+                        <p class="title"><input type="text" id="mood" name="mood" value="$rs['mood']" class="text title" />
+                        </p>
+						   
+                         
+                                                
+                            <span class="right">
+                                <input type="hidden" name="uid" value="$rs['uid']" />
+                                <input type="hidden" name="doact" value="$doact" />                           
+
+                                <button type="button" id="btn-submit">
+								{if $doact=='insert'}增加{else}更新{/if} &raquo;</button>
+                            </span>
+                        </p>
+                    </div>
+                   
+                </div>
+                <div class="column-06">
+                    <ul class="typecho-post-option">
+                        
+                        <li>
+                             <label for="slug" class="typecho-label">积分</label>
+                            <p><input type="text" id="score" name="score" class="mini" />
+                            </p>
+                            
+                        </li>
+						
+						 
+						<li>
+                             <label for="slug" class="typecho-label">性别</label>
+                            <p><input type="text" id="sex" name="sex" value="" class="mini" /></p>
+                            
+                        </li>
+                        <li>
+                            <label for="slug" class="typecho-label">出生日期</label>
+                            <p><input type="text" id="brithday" name="brithday" value="" class="mini" /></p> 
+                        </li>
+                   </ul>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+ 
+ <script type="text/javascript">
+    (function () {
+        window.addEvent('domready', function() {
+            var _d = $(document);
+            var handle = new Typecho.guid('typecho:guid', {offset: 1, type: 'mouse'});
+            
+            //增加高亮效果
+            (function () {
+                var _hlId = '';
+                
+                if (_hlId) {
+                    var _hl = _d.getElement('#' + _hlId);
+                    
+                    if (_hl) {
+                        _hl.set('tween', {duration: 1500});
+            
+                        var _bg = _hl.getStyle('background-color');
+                        if (!_bg || 'transparent' == _bg) {
+                            _bg = '#F7FBE9';
+                        }
+
+                        _hl.tween('background-color', '#AACB36', _bg);
+                    }
+                }
+            })();
+
+            //增加淡出效果
+            (function () {
+                var _msg = _d.getElement('.popup');
+            
+                if (_msg) {
+                    (function () {
+
+                        var _messageEffect = new Fx.Morph(this, {
+                            duration: 'short', 
+                            transition: Fx.Transitions.Sine.easeOut
+                        });
+
+                        _messageEffect.addEvent('complete', function () {
+                            this.element.setStyle('display', 'none');
+                        });
+
+                        _messageEffect.start({'margin-top': [30, 0], 'height': [21, 0], 'opacity': [1, 0]});
+
+                    }).delay(5000, _msg);
+                }
+            })();
+            
+            //增加滚动效果,滚动到上面的一条error
+            (function () {
+                var _firstError = _d.getElement('.typecho-option .error');
+    
+                if (_firstError) {
+                    var _errorFx = new Fx.Scroll(window).toElement(_firstError.getParent('.typecho-option'));
+                }
+            })();
+
+            //禁用重复提交
+            (function () {
+                _d.getElements('input[type=submit]').removeProperty('disabled');
+                _d.getElements('button[type=submit]').removeProperty('disabled');
+    
+                var _disable = function (e) {
+                    e.stopPropagation();
+                    
+                    this.setProperty('disabled', true);
+                    this.getParent('form').submit();
+                    
+                    return false;
+                };
+
+                _d.getElements('input[type=submit]').addEvent('click', _disable);
+                _d.getElements('button[type=submit]').addEvent('click', _disable);
+            })();
+
+            //打开链接
+            (function () {
+                
+                _d.getElements('a').each(function (item) {
+                    var _href = item.href;
+                    
+                    if (_href && 0 != _href.indexOf('#')) {
+                        //确认框
+                        item.addEvent('click', function (event) {
+                            var _lang = this.get('lang');
+                            var _c = _lang ? confirm(_lang) : true;
+                
+                            if (!_c) {
+                                event.stop();
+                            }
+                        });
+        
+                        /** 如果匹配则继续 */
+                        if (/^http\:\/\/localhost\/typecho\/admin\/.*$/.exec(_href) 
+                            || /^http\:\/\/localhost\/typecho\/index\.php\/action\/[_a-zA-Z0-9\/]+.*$/.exec(_href)) {
+                            return;
+                        }
+            
+                        item.set('target', '_blank');
+                    }
+                });
+            })();
+            
+            Typecho.Table.init('.typecho-list-table');
+            Typecho.Table.init('.typecho-list-notable');
+        });
+    })();
+</script>
+
+<script type="text/javascript">
+    (function () {
+        window.addEvent('domready', function() {
+            /** 标签自动完成 */
+            var _tags = [];
+            
+            /** 自动完成 */
+           // Typecho.autoComplete('#tags', _tags);
+        });
+    })();
+</script>
+
+<script type="text/javascript">
+    (function () {
+        window.addEvent('domready', function() {
+        
+           
+            
+           // $('btn-save').removeProperty('disabled');
+            $('btn-submit').removeProperty('disabled');
+           
+            
+            $('btn-submit').addEvent('click', function (e) {
+			 
+                this.getParent('span').addClass('loading');
+                this.setProperty('disabled', true);
+				
+                //$(document).getElement('input[name=doact]').set('value', 'insert');
+                $(document).getElement('.typecho-post-area form').submit();
+            });
+        });
+    })();
+</script>
+<script type="text/javascript">
+    var textEditor = new Typecho.textarea('#text', {
+        autoSaveTime: 30,
+        resizeAble: true,
+        autoSave: false,
+        autoSaveMessageElement: 'auto-save-message',
+        autoSaveLeaveMessage: '您的内容尚未保存, 是否离开此页面?',
+        resizeUrl: 'http://localhost/typecho/index.php/action/ajax'
+    });
+
+    /** 这两个函数在插件中必须实现 */
+    var insertImageToEditor = function (title, url, link, cid) {
+        textEditor.setContent('<a href="' + link + '" title="' + title + '"><img src="' + url + '" alt="' + title + '" /></a>', '');
+        new Fx.Scroll(window).toElement($(document).getElement('textarea#text'));
+    };
+    
+    var insertLinkToEditor = function (title, url, link, cid) {
+        textEditor.setContent('<a href="' + url + '" title="' + title + '">' + title + '</a>', '');
+        new Fx.Scroll(window).toElement($(document).getElement('textarea#text'));
+    };
+</script>
+ <script type="text/javascript">
+    var deleteAttachment = function (cid, el) {
+    
+        var _title = $(el).getParent('li').getElement('strong');
+        
+        if (!confirm("你确认删除附件 %s 吗?".replace("%s", _title.get('text').trim()))) {
+            return;
+        }
+
+        _title.addClass('delete');
+        
+        new Request.JSON({
+            method : 'post',
+            url : 'http://localhost/typecho/index.php/action/contents-attachment-edit',
+            onComplete : function (result) {
+                if (200 == result.code) {
+                    $(el).getParent('li').destroy();
+                } else {
+                    _title.removeClass('delete');
+                    alert('删除失败');
+                }
+            }
+        }).send('do=delete&cid=' + cid);
+    };
+
+    (function () {
+
+        window.addEvent('domready', function() {
+            var _inited = false;
+            
+            //begin parent tabshow
+            $(document).getElement('#upload-panel').addEvent('tabShow', function () {
+            
+                if (_inited) {
+                    return;
+                }
+                _inited = true;
+                
+                var swfuploadLoaded = function () {
+                    $(document).getElement('#upload-panel .button')
+                    .set('html', '上传文件 <small style="font-weight:normal">(200M)</small>');
+                };
+            
+                var fileDialogComplete = function (numFilesSelected, numFilesQueued) {
+                    try {
+                        this.startUpload();
+                    } catch (ex)  {
+                        this.debug(ex);
+                    }
+                };
+            
+                var uploadStart = function (file) {
+                    var _el = new Element('li', {
+                        'class' : 'upload-progress-item clearfix',
+                        'id'    : file.id,
+                        'text'  : file.name
+                    });
+                    
+                    _el.inject($(document).getElement('ul.upload-progress'), 'top');
+                };
+                
+                var uploadSuccess = function (file, serverData) {
+                    var _el = $(document).getElement('#' + file.id);
+                    var _result = JSON.decode(serverData);
+                    
+                    _el.set('html', '<strong>' + file.name + 
+                    '<input type="hidden" name="attachment[]" value="' + _result.cid + '" /></strong>' + 
+                    '<small><span class="insert">插入</span>' +
+                    ' , <span class="delete">删除</span></small>');
+                    _el.set('tween', {duration: 1500});
+                    
+                    _el.setStyles({
+                        'background-image' : 'none',
+                        'background-color' : '#D3DBB3'
+                    });
+                    
+                    _el.tween('background-color', '#D3DBB3', '#FFFFFF');
+                    
+                    var _insertBtn = _el.getElement('.insert');
+                    if (_result.isImage) {
+                        _insertBtn.addEvent('click', function () {
+                            insertImageToEditor(_result.title, _result.url, _result.permalink);
+                        });
+                    } else {
+                        _insertBtn.addEvent('click', function () {
+                            insertLinkToEditor(_result.title, _result.url, _result.permalink);
+                        });
+                    }
+                    
+                    var _deleteBtn = _el.getElement('.delete');
+                    _deleteBtn.addEvent('click', function () {
+                        deleteAttachment(_result.cid, this);
+                    });
+                };
+                
+                var uploadComplete = function (file) {
+                    //console.dir(file);
+                };
+                
+                var uploadError = function (file, errorCode, message) {
+                    var _el = $(document).getElement('#' + file.id);
+                    var _fx = new Fx.Tween(_el, {duration: 3000});
+                    
+                    _el.set('html', '<strong>' + file.name + ' 上传失败</strong>');
+                    _el.setStyles({
+                        'background-image' : 'none',
+                        'color'            : '#FFFFFF',
+                        'background-color' : '#CC0000'
+                    });
+                    
+                    _fx.addEvent('complete', function () {
+                        _el.destroy();
+                    });
+                    
+                    _fx.start('background-color', '#CC0000', '#F7FBE9');
+                };
+                
+                var uploadProgress = function (file, bytesLoaded, bytesTotal) {
+                    var _el = $(document).getElement('#' + file.id);
+                    var percent = Math.ceil((1 - (bytesLoaded / bytesTotal)) * _el.getSize().x);
+                    _el.setStyle('background-position', '-' + percent + 'px 0');
+                };
+            
+                var swfu, _size = $(document).getElement('.typecho-list-operate a.button').getCoordinates(),
+                settings = {
+                    flash_url : "http://localhost/typecho/admin/javascript/swfupload/swfupload.swf",
+                    upload_url: "http://localhost/typecho/index.php/action/upload",
+                    post_params: {"__typecho_uid" : "1", 
+                    "__typecho_authCode" : "" },
+                    file_size_limit : "209715200 byte",
+                    file_types : "*.gif;*.jpg;*.png;*.tiff;*.bmp",
+                    file_types_description : "所有文件",
+                    file_upload_limit : 0,
+                    file_queue_limit : 0,
+                    debug: false,
+                    
+                    //Handle Settings
+                    file_dialog_complete_handler : fileDialogComplete,
+                    upload_start_handler : uploadStart,
+                    upload_progress_handler : uploadProgress,
+                    upload_success_handler : uploadSuccess,
+                    queue_complete_handler : uploadComplete,
+                    upload_error_handler : uploadError,
+                    swfupload_loaded_handler : swfuploadLoaded,
+                    
+                    // Button Settings
+                    button_placeholder_id : "swfu-placeholder",
+                    button_height: 25,
+                    button_text: '',
+                    button_text_style: '',
+                    button_text_left_padding: 14,
+                    button_text_top_padding: 0,
+                    button_width: _size.width,
+                    button_window_mode: SWFUpload.WINDOW_MODE.TRANSPARENT,
+                    button_cursor: SWFUpload.CURSOR.HAND
+                };
+
+                swfu = new SWFUpload(settings);
+                
+            });
+            //end parent tabshow
+        });
+    })();
+</script>
+    </body>
+</html>

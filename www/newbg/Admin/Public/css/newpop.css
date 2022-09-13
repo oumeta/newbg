@@ -1,0 +1,271 @@
+/* CSS Document */
+.background {
+	height: 125px;
+	width: 340px;
+	font-size: 12px;
+	overflow:hidden;
+}
+
+#background .title {
+	padding-left: 8px;
+}
+#title{
+	padding-top:5px;padding-right:12px;
+	}
+#background .title1 {
+	font-weight: 700;
+	font-size: 12px;
+	color: #333333;
+}
+#background .title11 {
+	font-size: 12px;
+	color: #333123;
+}
+
+#background .close {
+	position: absolute;
+	width: 7px;
+	height: 7px;
+	right: 8px;
+	top: 8px;cursor:pointer;
+}
+#background  .popContent{
+	font-weight:normal;
+	font-size:12px;
+	color:#000;
+	text-decoration:none;
+	}
+#background .left_img {
+	width: 48px;
+	height: 48px;
+	cursor:pointer;
+	clear:both;
+	margin-top:7px;
+	margin-left:6px;
+}
+
+#background .info {
+	float: left;
+	width: 260px;
+	padding-left: 10px;
+	margin-top:5px;
+	height: 75px;
+	overflow:hidden;
+}
+#background .info td{
+	padding:1px 0;
+	}
+#background .link {
+	float: left;
+	width: 225px;
+	padding-left: 16px;
+	height: 20px;
+}
+#background .num{
+	color:#31649d;
+	}
+	
+/*pop_title*/	
+.fontcolor1 {
+	font:15px '宋体';
+	color: #273246;
+	font-style: 700;
+	font-weight:700;
+}
+/*pop_username*/
+.fontcolor2 {
+	font-weight: 700;
+	color: #F46302;
+	font-size: 12px;
+}
+/*pop_email*/
+.fontcolor3 {
+	color: #999999;
+	font-size: 12px;
+}
+/*pop_content*/
+.fontcolor4 {
+font-weight:normal;
+	font-size:12px;
+	color:#000000;
+	text-decoration:none;
+}
+/*pop_link*/
+a:link.fontcolor5,a:visited.fontcolor5  {
+	color: #2E659E;
+	font-size: 12px;
+}
+/*pop_content_link*/
+a:link.fontcolor6,a:visited.fontcolor6 {
+font-weight:normal;
+	font-size:12px;
+	color:#2E659E;
+	font-weight:700;
+}
+#friendContainer{
+width:340px;height:258px;
+}
+#friendContainer .friendTitle{
+position: relative;padding: 6px 0px 0px 5px;text-align:left;position:relative;
+}
+#friendContainer .friendList{
+padding-left: 15px;padding-right:15px;
+}
+#friendContainer .friendList td{
+ padding:2px 0;	
+}
+.popBox{
+height:125px;overflow:hidden;	
+}
+
+#inviteContainer{
+ font:12px '宋体';text-align:left;
+ width:343px;background:url('images/invite_bg.gif') repeat-y;line-height:14px;
+}
+#inviteContainer .bgTop{
+ background:url('images/invite_top.gif') no-repeat;
+}
+#inviteContainer .inviteFooter{
+ background:url('images/invite_bottom.gif') no-repeat left bottom;height:10px;width:343px;height:8px;
+}
+#inviteContainer .inviteTitle,#inviteContainer .inviteList{
+ padding:8px;
+}
+#inviteContainer .inviteTitle{
+ padding:8px 30px 0 8px;
+}
+#inviteContainer .inviteList{
+padding:5px 0px 0 8px;margin-left:10px;width:312px;
+}
+#inviteContainer .title1{
+  font-size:13px;color:#333534;font-weight:700;font:'宋体';padding-right:15px;
+}
+#inviteContainer .title2{
+  font-size:12px;color:#000;font-weight:normal;padding-right:9px;
+}
+#inviteContainer .title2 span{
+ color:#3062A1;
+}
+#inviteContainer .title3{
+  font-size:12px;color:#666;font-weight:normal;
+}
+#inviteContainer table{
+ border:0;border-collapse:collapse;width:310px;
+}
+#inviteContainer td{
+ border:0;font-size:12px;word-break:keep-all;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+ height:20px;padding:5px 0 0 0;
+}
+#inviteContainer .name{
+color:#F56300;font-weight:700;font-size:14px;width:80px;text-align:left;
+}
+#inviteContainer .email{
+color:#999;width:153px;text-align:left;font-size:13px;
+}
+#inviteContainer .mod,#inviteContainer .del{
+width:31px;
+}
+#inviteContainer .save{
+display:none;
+}
+
+#inviteContainer .mod,#inviteContainer .del{
+color:#2D649C;
+}
+#inviteContainer .mod span,#inviteContainer .del span{
+cursor:pointer;
+}
+#inviteContainer .td_btn{
+	width:15px;height:15px;
+}
+#inviteContainer .btn{
+ background:url('images/pop1.gif') no-repeat center center;width:16px;height:15px;visibility:hidden;cursor:pointer;
+}
+#inviteContainer .star{
+color:red;padding-right:3px;
+}
+#inviteContainer .bottomline{
+ border-bottom:1px dotted #2E659E;height:5px;margin:10px 0 5px 0;
+}
+#inviteContainer .contact_tbl{
+ 
+}
+#inviteContainer .contact_tbl td{
+ padding-top:4px;
+}
+#inviteContainer .contact_info{
+width:69px;text-align:right;
+}
+#inviteContainer .contact_input{
+width:202px;height:21px;padding-left:5px;padding-top:1px;text-align:left; background:url('images/input.gif') no-repeat;border:0;
+font-size:13px;
+font-family: '宋体',arial,helvetica,clean,sans-serif;
+}
+#inviteContainer .contact_group{
+width:207px;padding-left:5px;padding-top:1px;text-align:left; border:0; background:url('images/input2.gif') no-repeat;
+}
+#inviteContainer .contact_group div{
+   width:180px;height:23px;line-height:21px;overflow:hidden;cursor:default;
+   font-size:13px;
+  font-family:arial,helvetica,clean,sans-serif;
+}
+#group_list_wrap{
+position:absolute;background:#ccc;z-index:100000000;display:none;
+}
+#group_list{
+ width:204px;height:132px;top:-2px;left:-2px;border:1px solid #999;position:relative;background:#fff;overflow:auto;overflow-x:hidden;
+}
+#group_list li input{
+	vertical-align:middle;margin:1px;margin-right:2px;
+}
+#group_list  ul,#group_list li{
+ margin:0px;padding:0px; list-style:none;
+}
+#group_list  li{
+ clear:both;padding:2px 0px 3px 10px;cursor:pointer;
+}
+#group_list li.over{
+ background:#2E659E;
+}
+
+
+/* ===PC custom side activity begin=== */
+
+#dbankAdBg{
+height:100%;width:100%;background:#000;position:absolute;zoom:1;display:none;z-index:10;
+}
+.dbankAdContainer-bg{
+height:247px;background:#000;width:100%;position:absolute;display:none;z-index:10;
+
+}
+#dbankAdContainer{
+	height:245px;width:100%;position:absolute;cursor:pointer;
+	background:url(http://st2.dbank.com/images/pc/ad-bg.gif) repeat-x;display:none;z-index:10;
+}
+#dbankAd{
+	height:245px;background:url(http://st2.dbank.com/images/pc/ad.gif) no-repeat center center;
+}
+#dbankAd a:link,#dbankAd a:visited{
+ border:0;width:202px;height:32px;position:absolute;left:50%;
+ margin-left:-101px;margin-top:186px;display:block;
+}
+#ad-close{
+ position:absolute;width:25px;height:25px;right:0px;top:0px;cursor:pointer;display:block;border:0;
+ background:url(http://st2.dbank.com/images/pc/ad-close.gif);
+}
+
+/* ===PC custom side activity end=== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+

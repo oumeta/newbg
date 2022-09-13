@@ -1,0 +1,53 @@
+ {template formhead}
+<div  >
+   <form id="myform" method='post' action="{eval echo U('getmyshu')}" >	
+   <select name="dyear">
+     {eval for($i=2011;$i<=2021;$i++){}		
+		  <option value=$i>$i</option>  
+		 
+	 <?}?>
+	 </select>	 
+ 	<input type=submit value='查询'>
+	</form>
+</div>  
+我的应收({$myname})
+{eval $dbc=array();}
+ <table border=1 width=100%>
+ <tr><td>客户</td>
+		 {eval for($i=1;$i<=12;$i++){}
+		<td>
+		  $i 月
+		  </td>
+		 <?}?>		
+</tr>
+ {loop $dlist $key $v}
+
+	   
+		<tr>
+		 <td> $v['cusname']</td>
+		 {eval for($i=1;$i<=12;$i++){}
+		  <td>
+		  $v['A'.$i]
+		  {eval $dbc[$i]+=$v['A'.$i];} 
+		  </td>
+		 <?}?>		
+		</tr>
+ {/loop}
+ <tr><td>共计</td>
+ {eval for($i=1;$i<=12;$i++){}
+		<td>
+		  $dbc[$i]
+		  </td>
+		 <?}?>		
+</tr>
+ </table> 
+ <script type="text/javascript">
+ <!--
+	VanadiumForm.prototype.success=function(){
+	$("#myform").submit();		
+	return false;
+				
+}
+ //-->
+ </script>
+ {template formfoot}

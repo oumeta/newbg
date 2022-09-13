@@ -1,0 +1,142 @@
+{template pageform}
+	 
+ <body class="yui-skin-sam">
+    <form id="form" name='form' action="{eval echo U('save')}" method=post>
+ 
+ <div style="z-index: 2; visibility: visible; left: 10px; top: 10px;" id="toolBoxHolder_c" class="yui-panel-container shadow">
+ <div style="visibility: inherit; width: 750px;" class="yui-module yui-overlay yui-panel" id="toolBoxHolder">
+    <div id="toolBoxHolder_h" style="cursor: move;" class="hd">分类</div>
+    <div class="bd">
+        <fieldset>
+            <legend>基本信息</legend>
+            <div >
+				<label>名称:
+					 <input type="text" size="20" class="input-w2 input-text" name='name' value="{$rs['name']}"  />					 
+				</label>				
+			</div>				
+			 <div >
+				<label>上级分类:
+					 <select name='rootid'>
+					 <option value="0">顶级分类</option>
+					 <!--{loop $cate_options $k $v}-->
+					 <option value="{$v['id']}" <!--{if $v['id']==$rs['rootid']}-->selected<!--{/if}-->>{$v['name']}</option>
+					  <!--{/loop}-->
+					 
+					</select>			 
+				</label>				
+			</div>		
+			 <div >
+				<label>排&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;序:
+					 <input type="text" size="20" class="input-w2 input-text" name='taxis' value="{$rs['taxis']}"  />					 
+				</label>				
+			</div>		
+			 <div >
+				<label>描&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;述:
+					 <input type="text" size="20" class="input-w2 input-text" name='remark' value="{$rs['remark']}"  />					 
+				</label>				
+			</div>
+			 	
+		 
+        </fieldset>
+       
+       <div class=none>
+	     <input type="text" id="id" name="id" class="input-w2 input-text" value="$rs['id']"   />
+		 <input type="text" id="doact" name="doact" class="input-w2 input-text" value="$doact"   />
+	   	 <input type="text" id="type" name="type" class="input-w2 input-text" value="$type"   />
+
+	   </div>
+
+		<div>
+        	<span id="setHeader" class="yui-button yui-push-button"><span class="first-child"><button id="btsave" tabindex="0" type="button">保存信息</button></span></span>
+		</div>
+		 
+
+   
+    </div>
+</div>
+<div class="underlay"></div>
+
+</div>
+
+
+ 
+ 
+</form>
+<script type="text/javascript">
+<!--
+	 
+ var result_list=[];
+<!--{loop $node_options['nodes_2'] $k $v}-->
+  result_list[{$k}]=[];
+	<!--{loop $v $m $n}-->
+result_list[{$k}].push(['{$n['name']}','{$n['title']}']);
+	 <!--{/loop}-->
+<!--{/loop}-->
+$(function(){
+ 	var id=$("#id").val();
+	
+	if(id){
+		try{
+			var eles = document.forms['form'].elements;
+			 
+			searchAct(eles['appid'].options[eles['appid'].selectedIndex].title);
+			sel_selected("act","{$rs['act']}" )
+		}catch(e){}
+	} 
+	 
+	
+	$("#btsave").click(function(){
+	 $("#form").submit();		   
+	
+	})
+})
+ 	 
+
+ function searchAct(i){ 
+ 
+   var result=result_list[i];
+   
+	if (result.length <= 0){
+		alert('没有动作');
+	}
+
+	var eles = document.forms['form'].elements;
+	/* 清除列表 */
+	var selLen = eles['act'].options.length;
+	for (var i = selLen - 1; i >= 0; i--)
+	{
+	eles['act'].options[i] = null;
+	}
+	var arr = result;
+	var userCnt = arr.length;
+
+	for (var i = 0; i < userCnt; i++)
+	{
+	var opt = document.createElement('OPTION');
+	opt.value = arr[i][0];
+	opt.text = arr[i][1];
+	eles['act'].options.add(opt);
+	}
+	
+	  
+     
+  }
+ 
+
+ function $1(s){return document.getElementById(s);}
+
+//使下拉框选中obj为物件ID，id为要选中的值;
+function sel_selected(obj,id){
+	 
+    var opts = $1(obj).options;
+	alert
+		for(var i=0;i<opts.length;i++){
+		   if(opts[i].value == id ){
+			  opts[i].selected = true;
+			  break;
+		   }
+        }
+}
+
+ //-->
+</script>

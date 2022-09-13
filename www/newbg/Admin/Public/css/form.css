@@ -1,0 +1,115 @@
+#hd, #bd, #ft { border: 1px solid #808080; }
+#hd h1 { font-size: 120%; }
+#bd { min-height: 350px; }
+#bd p { border: 2px solid #426FD9; background-color: #F2F2F2; height: 200px; padding: .25em; }
+#bd p.nav { background-color: #EDF5FF; border-color: #7D98B8; }
+body { position: relative; }
+.bd { text-align: left; }
+.bd div{ 
+margin:5px;
+margin-top:10px;
+}
+.bd div input{
+width:250px;
+}
+#toolBoxHolder { visibility: hidden; }
+#toolBoxHolder fieldset { border: 1px solid #ccc; padding: .5em; margin: .5em 0; }
+#toolBoxHolder p { padding-bottom: .25em }
+#showSlider { position: relative; }
+#sliderbg { background-image: url( bg-fader.gif ); background-repeat: repeat-x; position: relative; top: 10px; height: 40px; width: 209px; }
+#sliderthumb { position: absolute; }
+#custom-doc { margin:auto;text-align:left; }
+#sliderValue { border: 1px solid #ccc; }
+#toolBoxHolder .yui-button { margin: .25em 0; }
+#showCode .bd { height: 310px; overflow: scroll; }
+#showCode .ft { text-align: left; }
+
+button.rowDel { 
+	background: transparent url();
+	border: 0;
+	padding: 0;
+	float: left; 
+	height: 12px; 
+	overflow: hidden;
+	text-indent: 999px; 
+	width: 12px; 
+	margin: 4px 2px; 
+}
+
+#gridRowDel0 { background-image: none; }
+
+
+li.yui-button-selectedmenuitem {
+	background: url(checkbox.png) left center no-repeat;
+}
+
+#doc .yui-button,
+#doc2 .yui-button,
+#doc3 .yui-button,
+#doc4 .yui-button,
+#custom-doc .yui-button {
+	border: solid 1px #808080;
+	background: #ff9;
+	margin: .25em;
+}
+
+#doc .yui-button .first-child,
+#doc2 .yui-button .first-child,
+#doc3 .yui-button .first-child,
+#doc4 .yui-button .first-child,
+#custom-doc .yui-button .first-child {
+	border: 0;
+	margin: 0;
+}		
+
+#doc .yui-button .first-child button,
+#doc2 .yui-button .first-child button,
+#doc3 .yui-button .first-child button,
+#doc4 .yui-button .first-child button,
+#custom-doc .yui-button .first-child button {
+	padding: 0 20px 0 5px;
+	font-size: 77%;  /* 10px */
+	line-height: 1.5;
+	min-height: 1.5em;
+	color: #000;
+	font-weight: bold;
+}
+
+#hd h1,
+#ft p {
+	min-height: 1.5em;
+	*height: 2em;
+}
+
+#doc p,
+#doc2 p,
+#doc3 p,
+#doc4 p,
+#custom-doc p,
+#hd, 
+#ft {
+	position: relative;
+}
+
+.order-indicator {
+	font-size: 77%;
+	font-weight: bold;
+	position: absolute;
+	padding: 2px 4px;
+	right: 5px;
+	bottom: 5px;
+	background: #fc6;
+	border: solid 1px #c60;		
+}
+
+#hd .order-indicator,
+#ft .order-indicator {
+	right: 3px;
+	bottom: 3px;			
+}
+
+.first-row select {
+	margin-left: 16px;
+}
+ 
+ 
